@@ -5,7 +5,7 @@
 @section('sidebar')
     @parent
 
-    @include('menus/menuclass')
+    @include('menus/menurecep')
     
 @endsection
 
@@ -34,7 +34,7 @@
             <td>{{$paciente->nasc}}</td>
             <td>{{$paciente->nome}}</td>
             <td>{{$paciente->mae}}</td>
-            <td><button type="button" onclick="alterar('alteracad.php?cod2=<?php echo 'cod' ?>')" class="btn btn-secondary btn-sm">Alterar</button></td>            
+            <td><button type="button" onclik="paciente" class="btn btn-secondary btn-sm">Alterar</button></td>            
             <td><button type="button" onclick="agenda('classificar.php?cod2=<?php echo 'cod'?>')" class="btn btn-primary btn-sm">Imprimir</button></td>
             <td><button type="button" onclick="classifica('encaminhar.php?cod2=<?php echo 'cod'?>')" class="btn btn-success btn-sm">Encaminhar</button></td>
         </tr>

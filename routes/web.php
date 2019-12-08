@@ -29,7 +29,7 @@ Route::get('classificacao','ClassificaController@index');
 Route::get('historico','ClassificaController@result');
 
 Route::get('class','MenuController@class');
-Route::get('paciente','MenuController@pacclass');
+Route::get('paciente','MenuController@paciente');
 Route::get('recepcao','MenuController@recepcao');
 Route::get('atendimento','MenuController@atendimento');
 Route::get('internacao','MenuController@internacao');

@@ -37,7 +37,7 @@ class MenuController extends Controller
         
     }
 
-    public function pacclass(){
+    public function paciente(){
       
         return view('pages/paciente');
         

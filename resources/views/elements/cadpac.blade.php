@@ -18,17 +18,23 @@
 
     @csrf
 
-      <div id="cima">
+    @if (session('status'))
+      <div class="alert alert-success">
+        {{ session('status') }}
+      </div>
+    @endif
+
+          <div id="cima">
 
          <div id="foto"></div>
 
          <div id="peq">
 
-            <input type="hidden" name="cod"/>
+            <input type="hidden"/>
 
             <div class="input-group mb-3">
                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">SUS</span>
+                  <span class="input-group-text"  id="inform">SUS</span>
                </div>
                   <input type="text" class="form-control" name="sus" >
             </div>
@@ -37,7 +43,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">RG</span>
                </div>
-                  <input type="text" class="form-control" name="cpf">
+                  <input type="text" class="form-control" name="rg">
             </div>
 
             <div class="input-group mb-3">
@@ -94,7 +100,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Tel. 2</span>
                </div>
-                  <input type="text" class="form-control" name="tel2" >
+                  <input type="text" class="form-control">
             </div>
 
          
@@ -146,7 +152,7 @@
 
     </form>
 </div>
-
+   
 </body>
 
 </HTML>
