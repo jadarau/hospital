@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-use App\Pessoa;
+use App\Pessoas;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -46,7 +45,10 @@ class MenuController extends Controller
 
     public function recepcao(){
       
-        return view('pages/recepcao');
+        $pessoas = Pessoas::all();
+        // return view('pages.classificacao');
+        return view('pages.recepcao')->with('pacientes', $pessoas);
+        
         
     }
 

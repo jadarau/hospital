@@ -1,40 +1,47 @@
-@extends('menus/menuclass')
+@extends('templates/master')
 
-@section('title', 'Classificaçao')
+@section('title', 'Resultado')
 
 @section('sidebar')
-    
-    @section('content')
+    @parent
 
+    @include('menus/menuclass')
     
-    <table class="table table-hover table-striped table-bordered">
+@endsection
+
+@section('content')
+
+<table class="table table-hover table-striped table-bordered">
 
       <thead>
         <tr>
           <th class="campo2">Telefone</th>
-          <th class="campo">nascimento</th>
+          <th class="campo">Nascimento</th>
           <th >Nome</th>
           <th >Mae</th>
-          <th class="campo">Alterar</th>
+          <th class="campo">Hora</th>
           <th class="campo">Agendar</th>
           <th class="campo">Encaminhar</th>     
         </tr>
       </thead>
 
       <tbody>
-      @foreach ($results as $result)
+
+      @if($pacientes)
+        @foreach($pacientes as $paciente)
         <tr>
-            <td>{{$result->tel}}</td>
-            <td>{{$result->nasc}}</td>
-            <td>{{$result->nome}}</td>
-            <td>{{$result->mae}}</td>
-            <td><button type="button" onclick="alterar('alteracad.php?cod2=<?php echo 'cod' ?>')" class="btn btn-secondary btn-sm">Alterar</button></td>            
+            <td>{{$paciente->tel}}</td>
+            <td>{{$paciente->nasc}}</td>
+            <td>{{$paciente->nome}}</td>
+            <td>{{$paciente->mae}}</td>
+            <td>12:00</td>            
             <td><button type="button" onclick="agenda('classificar.php?cod2=<?php echo 'cod'?>')" class="btn btn-primary btn-sm">Agendar</button></td>
             <td><button type="button" onclick="classifica('encaminhar.php?cod2=<?php echo 'cod'?>')" class="btn btn-success btn-sm">Encaminhar</button></td>
         </tr>
         @endforeach
+      @endif      
         </tbody>
 
       </table>
-    
-  @endsection
+
+@endsection

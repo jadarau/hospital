@@ -1,18 +1,27 @@
-@include('menus/componentes/superior')
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="paciente">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Cadastrar</span></a>
+      </li>
 
-@section('title', 'Cadastro')
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="buscapac">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Localizar</span></a>
+      </li>
 
-@include('menus/componentes/meio')
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="historico">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Relatórios</span></a>
+      </li>
 
-      @include('elements/opaciente')
-
-@include('menus/componentes/meiodois')
-
-@include('elements/buscapac')
-
-@include('menus/componentes/meiotres')
-
-        @yield('content')
-
-@include('menus/componentes/inferior')
-        
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="home">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Início</span></a>
+      </li>
