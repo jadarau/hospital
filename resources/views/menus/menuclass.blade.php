@@ -1,19 +1,30 @@
-@include('menus/componentes/superior')
-
-@section('title', 'Classificaçao')
-
-@include('menus/componentes/meio')
-
-      @include('elements/opclassifica')
-
-@include('menus/componentes/meiodois')
-
-      @include('elements/buscapac')
-
+      <!-- Divider -->
       
-@include('menus/componentes/meiotres')
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="classificacao">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Classificação</span></a>
+      </li>
 
-        @yield('classificacao-view')
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="classificados">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Classificados</span></a>
+      </li>
 
-@include('menus/componentes/inferior')
-        
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="historico">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Histórico</span></a>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="home">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Início</span></a>
+      </li>
+      

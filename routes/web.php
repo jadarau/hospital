@@ -14,15 +14,21 @@
 
 
 Route::get('/', function () {
-    return view('pages/home');
+    
+    return view('pages.home');
 });
 //MENUS
 
 
 Route::resource('busca','PessoasController');
 Route::get('home','MenuController@home');
+Route::get('classificados', function () {
+    return view('pages.classificados');
+});
+Route::get('classificacao','ClassificaController@index');
+Route::get('historico','ClassificaController@result');
+
 Route::get('class','MenuController@class');
-Route::get('classificacao','MenuController@classificacao');
 Route::get('paciente','MenuController@pacclass');
 Route::get('recepcao','MenuController@recepcao');
 Route::get('atendimento','MenuController@atendimento');

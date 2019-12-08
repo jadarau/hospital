@@ -1,13 +1,17 @@
-@extends('menus/menuclass')
+@extends('templates/master')
 
 @section('title', 'Classificaçao')
 
 @section('sidebar')
-    
-    @section('classificacao')
+    @parent
 
+    @include('menus/menuclass')
     
-    <table class="table table-hover table-striped table-bordered">
+@endsection
+
+@section('content')
+
+<table class="table table-hover table-striped table-bordered">
 
       <thead>
         <tr>
@@ -16,25 +20,29 @@
           <th >Nome</th>
           <th >Mae</th>
           <th class="campo">Alterar</th>
-          <th class="campo">Agendar</th>
-          <th class="campo">Encaminhar</th>     
+          <th class="campo">Ficha</th>
+          <th class="campo">Sistema</th>     
         </tr>
       </thead>
 
       <tbody>
-      
+      <!--Inserir resultado da busca -->
+      @if($pacientes)
+        @foreach($pacientes as $paciente)
         <tr>
-            <td>(71) 9 8870-3456</td>
-            <td>14/07/1983</td>
-            <td>Flavio Teixeira Cardoso</td>
-            <td>Sonia Bizerra Santos</td>
+            <td>{{$paciente->tel}}</td>
+            <td>{{$paciente->nasc}}</td>
+            <td>{{$paciente->nome}}</td>
+            <td>{{$paciente->mae}}</td>
             <td><button type="button" onclick="alterar('alteracad.php?cod2=<?php echo 'cod' ?>')" class="btn btn-secondary btn-sm">Alterar</button></td>            
-            <td><button type="button" onclick="agenda('classificar.php?cod2=<?php echo 'cod'?>')" class="btn btn-primary btn-sm">Agendar</button></td>
+            <td><button type="button" onclick="agenda('classificar.php?cod2=<?php echo 'cod'?>')" class="btn btn-primary btn-sm">Imprimir</button></td>
             <td><button type="button" onclick="classifica('encaminhar.php?cod2=<?php echo 'cod'?>')" class="btn btn-success btn-sm">Encaminhar</button></td>
         </tr>
-        
-        </tbody>
+        @endforeach
+      @endif      
+       
+      </tbody>
 
       </table>
     
-  @endsection
+@endsection   
