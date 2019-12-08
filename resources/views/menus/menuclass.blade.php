@@ -18,7 +18,7 @@
       <li class="nav-item">
         <a class="nav-link" href="historico">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Histórico</span></a>
+          <span>Novo Paciente</span></a>
       </li>
 
       <!-- Nav Item - Charts -->

@@ -1,142 +1,163 @@
 *{
 
-margin: 0px;
-padding: 0px;
-
-}
-
-input{
-
-display: block;
-height: 35px;
-width: 400px;
-margin: 10px;
-border-radius: 30px;
-border: 1px solid black;
-font-size: 16pt;
-padding: 15px;
-
-}
-
-div#corpoform{
-
- background: ;   
- width: 420px;
- margin: 30px auto 0px auto;
- 
-
-}
-
-
-#cima{
-
-height: 130px;
-background: ;
-
-}
-
-
-#foto{
-
-margin-left: 10px;
-width: 24%;
-height: 130px;
-background: grey;
-float: left;
-margin-top: 0;
-
-}
-
-
-
-#peq{
-
-width: 70%;
-background:;
-float: right;
-
-}
-
-#sus{
-
-    display: block;
-    height: 35px;
-    width: 280px;
-    margin: 5px;
-    border-radius: 30px;
-    border: 1px solid black;
-    font-size: 16pt;
-    padding: 15px;    
-
-}
-
-#cpf{
-
-    display: block;
-    height: 35px;
-    width: 280px;
-    margin: 5px;
-    border-radius: 30px;
-    border: 1px solid black;
-    font-size: 16pt;
-    padding: 15px;    
-
-}
-
-
-#nasc{
-
-    display: block;
-    height: 35px;
-    width: 280px;
-    margin: 5px;
-    border-radius: 30px;
-    border: 1px solid black;
-    font-size: 16pt;
-    padding: 15px;    
-
-}
-
-#campos{
-
-    background: ;
-}
-
-#botao{
-
-    padding: 0;
-    width:100%;
+    margin: 0px;
+    padding: 0px;
     
-
-}
-
-.salvo{
-
-   background: darkgrey;
-
-}
-
-#bt2{
-
-    background: pink;
-    text-align: center;
-    width:400px;
-
-}
-
-#salvar{
-
-    width:50%;
-
-}
-
-#salvar3{
-
-    width:100%;
-
-}
-
-#inform{
-
-    width:80px;
-}
+    }
+    
+    input{
+    
+    display: block;
+    height: 35px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 1px solid black;
+    font-size: 16pt;
+    padding: 15px;
+    
+    }
+    
+    
+    
+    div#corpoform{
+    
+     background: none;   
+     width: 85%;
+     margin: 30px auto 0px auto;
+     
+    
+    }
+    
+    
+    #cima{
+    
+    float:left;
+    width:45%;
+    height: 130px;
+    background: none;
+    
+    }
+    
+    
+    #foto{
+    
+    margin-left: 10px;
+    width: 24%;
+    height: 130px;
+    background: grey;
+    float: left;
+    margin-top: 0;
+    
+    }
+    
+    
+    
+    #peq{
+    
+    width: 70%;
+    background;
+    float: right;
+    
+    }
+    
+    #sus{
+    
+        display: block;
+        height: 35px;
+        width: 280px;
+        margin: 5px;
+        border-radius: 30px;
+        border: 1px solid black;
+        font-size: 16pt;
+        padding: 15px;    
+    
+    }
+    
+    #cpf{
+    
+        display: block;
+        height: 35px;
+        width: 280px;
+        margin: 5px;
+        border-radius: 30px;
+        border: 1px solid black;
+        font-size: 16pt;
+        padding: 15px;    
+    
+    }
+    
+    
+    #nasc{
+    
+        display: block;
+        height: 35px;
+        width: 280px;
+        margin: 5px;
+        border-radius: 30px;
+        border: 1px solid black;
+        font-size: 16pt;
+        padding: 15px;    
+    
+    }
+    
+    #campos{
+    
+        float:right;
+        width:45%;
+        background: none;
+    }
+    
+    #botao{
+    
+       
+        padding: 0;
+        width:100%;
+        
+    
+    }
+    
+    .salvo{
+    
+       background: darkgrey;
+    
+    }
+    
+    #bt2{
+    
+        background: pink;
+        text-align: center;
+        width:400px;
+    
+    }
+    
+    #salvar{
+    
+        width:50%;
+    
+    }
+    
+    #salvar3{
+    
+        width:100%;
+    
+    }
+    
+    #inform{
+    
+        width:80px;
+    }
+    
+    #alinhabt{
+    
+        position: relative;
+        margin-top: 10px;
+        vertical-align: bottom;
+    
+    }
+    
+    #botao2{
+        
+        background: pink;
+        height:50px;
+    }

@@ -14,7 +14,7 @@
             <a class="collapse-item" href="laboratorio">Laboratório</a>  
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Telas:</h6>
-            <a class="collapse-item" href="busca">Pacientes</a>
+            <a class="collapse-item" href="paciente">Pacientes</a>
             <a class="collapse-item" href="profissional">Profissionais</a>
             <a class="collapse-item" href="enfermaria">Enfermarias</a>
             <a class="collapse-item" href="leito">Leitos</a>
