@@ -17,7 +17,7 @@
         <tr>
           <th class="campo2">Telefone</th>
           <th class="campo">nascimento</th>
-          <th >Nome</th>
+          <th >Nome(3)</th>
           <th >Mae</th>
           <th class="campo">Alterar</th>
           <th class="campo">Ficha</th>
@@ -34,7 +34,7 @@
             <td>{{$paciente->nasc}}</td>
             <td>{{$paciente->nome}}</td>
             <td>{{$paciente->mae}}</td>
-            <td><button type="button" onclick="alterar('alteracad.php?cod2=<?php echo 'cod' ?>')" class="btn btn-secondary btn-sm">Alterar</button></td>            
+            <td><button type="button" onclick="alterar('alteracad.php?cod2=<?php echo 'cod' ?>')" class="btn btn-secondary btn-sm">Alterar2</button></td>            
             <td><button type="button" onclick="agenda('classificar.php?cod2=<?php echo 'cod'?>')" class="btn btn-primary btn-sm">Imprimir</button></td>
             <td><button type="button" onclick="classifica('encaminhar.php?cod2=<?php echo 'cod'?>')" class="btn btn-success btn-sm">Encaminhar</button></td>
         </tr>

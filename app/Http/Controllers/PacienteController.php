@@ -47,21 +47,56 @@ class PacienteController extends Controller
 
     public function localizar(){
 
-        return view ('pages/buscapac');
+        return view ('pages/parametro');
 
     }
     
-    public function editar($id){
+    public function editar(Request $request, $id = null){
 
-        $pessoas = Pessoas::find($id);
+        // if(!empty($id)){
 
-        $pessoas->nome = 'Novo Name';
+            //echo "Veio";
 
-        $flight->save();
+            // echo "<pre>";
+            //     var_dump($id);
+            // echo "</pre>";
+            // die();
 
+            return view('pages/parametro')->with('id', $id);
+
+        
     }
 
     public function excluir(){
 
+    }
+
+    public function direciona($id)
+    {   
+
+        $pessoas = Pessoas::find($id);
+
+        return view('pages.parametro')->with('pessoas', $pessoas);
+        //return "O Nome da pessoa é:".$pessoas->nome;
+        
+    }
+
+    public function direciona2($id)
+    {   
+
+        //$pessoas = Pessoas::find($id);
+
+        return view('pages.parametro');
+        //return "O Nome da pessoa é:".$pessoas->nome;
+        
+    }
+
+    public function ajaxRequestPost(Illuminate\Http\Request $request)
+    {
+        if ($request->isMethod('post')){ 
+            return view('pages.paciente');
+        }
+
+        return response()->json(['response' => 'This is get method']);
     }
 }

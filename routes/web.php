@@ -42,6 +42,13 @@ Route::get('laboratorio','MenuController@laboratorio');
 //Route::get('cadastro','PacienteController@cadastro');
 Route::post('paciente/cadastro','PacienteController@cadastro');
 Route::get('buscapac','PacienteController@localizar');
+Route::get('direciona2','PacienteController@direciona2');
+Route::get('/direciona/{id}','PacienteController@direciona');
+// Route::get('parametro/{idPessoa}', function ($id = null) {
+//     return "{$id}";
+// });
+
+Route::post('ajaxRequestPost', 'PacienteController@ajaxRequestPost');
 
 //RECEPCAO
 Route::get('recepcao/admissao','RecepcaoController@admissao');

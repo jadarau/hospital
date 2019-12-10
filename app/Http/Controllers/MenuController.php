@@ -37,9 +37,9 @@ class MenuController extends Controller
         
     }
 
-    public function paciente(){
-      
-        return view('pages/paciente');
+    public function paciente(Request $request){
+        
+            return view('pages/paciente');
         
     }
 
