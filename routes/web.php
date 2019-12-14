@@ -39,16 +39,22 @@ Route::get('leito','MenuController@leito');
 Route::get('laboratorio','MenuController@laboratorio');
 
 //PACIENTE
-//Route::get('cadastro','PacienteController@cadastro');
+Route::get('novopac', function(){
+    return view ('pages.pacientenovo');
+});
 Route::post('paciente/cadastro','PacienteController@cadastro');
 Route::get('buscapac','PacienteController@localizar');
-Route::get('direciona2','PacienteController@direciona2');
-Route::get('/direciona/{id}','PacienteController@direciona');
+//Route::get('direciona2','PacienteController@direciona2');
+Route::get('/editarpac/{id}','PacienteController@editar');
+
+Route::get('encaminhar', function(){
+    return view ('telas.encaminhar');
+});
 // Route::get('parametro/{idPessoa}', function ($id = null) {
 //     return "{$id}";
 // });
 
-Route::post('ajaxRequestPost', 'PacienteController@ajaxRequestPost');
+//Route::post('ajaxRequestPost', 'PacienteController@ajaxRequestPost');
 
 //RECEPCAO
 Route::get('recepcao/admissao','RecepcaoController@admissao');

@@ -51,18 +51,22 @@ class PacienteController extends Controller
 
     }
     
-    public function editar(Request $request, $id = null){
+    public function editar($id = null){
+        
 
-        // if(!empty($id)){
+        $pessoas = Pessoas::find($id);
 
-            //echo "Veio";
+        //if(!empty($pessoas)){
 
-            // echo "<pre>";
-            //     var_dump($id);
-            // echo "</pre>";
-            // die();
+            return view('pages.editarpac')->with('pessoas', $pessoas);
 
-            return view('pages/parametro')->with('id', $id);
+          //  }else{
+
+            //    return view('pages.paciente');
+
+           // }
+        
+        
 
         
     }
@@ -76,27 +80,16 @@ class PacienteController extends Controller
 
         $pessoas = Pessoas::find($id);
 
-        return view('pages.parametro')->with('pessoas', $pessoas);
-        //return "O Nome da pessoa é:".$pessoas->nome;
+        return view('pages.editarpac')->with('pessoas', $pessoas);
         
     }
 
-    public function direciona2($id)
-    {   
+    // public function ajaxRequestPost(Illuminate\Http\Request $request)
+    // {
+    //     if ($request->isMethod('post')){ 
+    //         return view('pages.paciente');
+    //     }
 
-        //$pessoas = Pessoas::find($id);
-
-        return view('pages.parametro');
-        //return "O Nome da pessoa é:".$pessoas->nome;
-        
-    }
-
-    public function ajaxRequestPost(Illuminate\Http\Request $request)
-    {
-        if ($request->isMethod('post')){ 
-            return view('pages.paciente');
-        }
-
-        return response()->json(['response' => 'This is get method']);
-    }
+    //     return response()->json(['response' => 'This is get method']);
+    // }
 }

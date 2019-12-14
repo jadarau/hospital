@@ -13,7 +13,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="paciente">
+        <a class="nav-link" href="novopac">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Novos Pacientes</span></a>
       </li>

@@ -17,8 +17,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+  <script>
 
-<form id="form" action="parametro" method="GET">
+function janela(url){
+  window.open(url,"altcad","toolbar=false, scrollbars=true,resizable=false,width=570,height=615,left=515,right=335")
+}   
+
+</script>
+
+
+<form id="form">
 
 @csrf
 
@@ -26,13 +34,13 @@
 
       <thead>
         <tr>
-          <th class="campo2">Telefone</th>
+          <th class="campo2">N° SUS</th>
           <th class="campo">nascimento</th>
           <th >Nome(1)</th>
           <th >Mae</th>
+          <th class="campo">Referência</th>
           <th class="campo">Alterar</th>
-          <th class="campo">Ficha</th>
-          <th class="campo">Sistema</th>     
+          <th class="campo">Admitir</th>     
         </tr>
       </thead>
 
@@ -42,13 +50,13 @@
         @foreach($pacientes as $paciente)
         <input type="hidden" name="cod"/>
         <tr>
-            <td>{{$paciente->tel}}</td>
+            <td>{{$paciente->sus}}</td>
             <td>{{$paciente->nasc}}</td>
             <td>{{$paciente->nome}}</td>
             <td>{{$paciente->mae}}</td>
-            <td><button type="submit" id="altera" class="btn btn-secondary btn-sm">Alterar1</button></td>            
-            <td><button type="button" id="imprimir" class="btn btn-primary btn-sm">Imprimir</button></td>
-            <td><a href="direciona/{{$paciente->id}}">Ecaminhar</a></td>
+            <td><label>Unidade Modelo</label></td>            
+            <td><a href="editarpac/{{$paciente->id}}">Atualizar</a></td>
+            <td><a id="encaminhar" onclick="janela('encaminhar');return false" href="">Ecaminhar</a></td>
         </tr>
         @endforeach
       @endif      
