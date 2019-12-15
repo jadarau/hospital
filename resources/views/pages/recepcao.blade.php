@@ -20,7 +20,7 @@
   <script>
 
 function janela(url){
-  window.open(url,"altcad","toolbar=false, scrollbars=true,resizable=false,width=570,height=615,left=515,right=335")
+  window.open(url,"altcad","toolbar=false, scrollbars=true,resizable=false,top=120,width=650,height=430,left=515,right=335")
 }   
 
 </script>
