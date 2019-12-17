@@ -10,7 +10,7 @@
 
 
 <div id="corpoform">
-    <form method="post" action="paciente/cadastro">
+    <form method="post" action="../paciente/cadastro">
 
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
   
@@ -21,7 +21,7 @@
 
          <div id="peq">
 
-            <input type="hidden"/>
+            <input type="hidden" value="{{$pessoas->id}}" name="id"/>
 
             <div class="input-group mb-3">
                <div class="input-group-prepend">

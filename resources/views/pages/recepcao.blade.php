@@ -1,4 +1,4 @@
-@extends('templates.master')
+@extends('templates.recepcao')
 
 @section('title', 'Classificaçao')
 
@@ -36,7 +36,7 @@ function janela(url){
         <tr>
           <th class="campo2">N° SUS</th>
           <th class="campo">nascimento</th>
-          <th >Nome(1)</th>
+          <th >Nome</th>
           <th >Mae</th>
           <th class="campo">Referência</th>
           <th class="campo">Alterar</th>

@@ -11,6 +11,8 @@ class PacienteController extends Controller
     //
     public function cadastro(Request $request){
         
+       if($request->input(array('name'=>'id')) == '' || $request->input(array('name'=>'id')) == null){ 
+
         if($request->input(array('name'=>'nome')) != '' && $request->input(array('name'=>'mae')) != ''){
 
             $pessoas = new Pessoas();
@@ -31,17 +33,32 @@ class PacienteController extends Controller
 
         }else{
 
-            //echo "Informe os dados obrigatórios do paciente!";
-
-            //redireciona para tela de cadastro
-            //return redirect('MenuController@paciente')->with('status', 'Profile updated!');
-            //return redirect()->action('MenuController@paciente');
-            //return back()->withInput();
-            //return redirect()->route('paciente');
-            return redirect('paciente');
+                return redirect('paciente');
 
         }
-        
+
+    }else{
+            
+
+            $id = $request->input(array('name'=>'id'));
+
+            $pessoas = Pessoas::find($id);
+
+            $pessoas->sus = $request->sus;
+            $pessoas->cpf = $request->cpf;
+            $pessoas->nasc = $request->nasc;
+            $pessoas->nome = $request->nome;
+            $pessoas->mae = $request->mae;
+            $pessoas->cep = $request->cep;
+            $pessoas->ende = $request->ende;
+            $pessoas->cidade = $request->cidade;
+            $pessoas->bairro = $request->bairro;
+            $pessoas->tel = $request->tel;
+            $pessoas->save();
+
+            return redirect()->action('MenuController@recepcao');
+
+        }
 
     }
 
@@ -51,8 +68,7 @@ class PacienteController extends Controller
 
     }
     
-    public function editar($id = null){
-        
+    public function editar($id = null){        
 
         $pessoas = Pessoas::find($id);
 
@@ -65,9 +81,6 @@ class PacienteController extends Controller
             //    return view('pages.paciente');
 
            // }
-        
-        
-
         
     }
 
