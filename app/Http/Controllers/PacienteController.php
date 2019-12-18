@@ -5,16 +5,32 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use App\Pessoas;
+use Illuminate\Support\Facades\Validator;
 
 class PacienteController extends Controller
 {
+
+    // public function messages()
+    // {
+    //     return [
+    //         'nasc.required' => 'Data de nascimento obrigatório',
+    //         'nome.required'  => 'Nome do paciente obrigatório',
+    //         'mae.required'  => 'Nome da mãe do paciente obrigatório'
+    //     ];  
+    // }
     //
     public function cadastro(Request $request){
         
        if($request->input(array('name'=>'id')) == '' || $request->input(array('name'=>'id')) == null){ 
 
-        if($request->input(array('name'=>'nome')) != '' && $request->input(array('name'=>'mae')) != ''){
+        if($request->input(array('name'=>'nasc')) != '' && $request->input(array('name'=>'nome')) != '' && $request->input(array('name'=>'mae')) != ''){
 
+            // $request -> validate([
+            //     //'nasc'=>'required',
+            //     'nome'=>'required',
+            //     'mae'=>'required'
+            // ]);
+            
             $pessoas = new Pessoas();
             $pessoas->sus = $request->sus;
             $pessoas->cpf = $request->cpf;
@@ -31,15 +47,13 @@ class PacienteController extends Controller
             //redireciona para tela de recepção
             return redirect()->action('MenuController@recepcao');
 
-        }else{
+            }else{
 
-                return redirect('paciente');
+                return view ('pages.paciente');
 
-        }
+                }
 
-    }else{
-            
-
+    }else{//se id nao vazio, edita            
             $id = $request->input(array('name'=>'id'));
 
             $pessoas = Pessoas::find($id);
@@ -77,9 +91,7 @@ class PacienteController extends Controller
             return view('pages.editarpac')->with('pessoas', $pessoas);
 
           //  }else{
-
             //    return view('pages.paciente');
-
            // }
         
     }
@@ -97,12 +109,5 @@ class PacienteController extends Controller
         
     }
 
-    // public function ajaxRequestPost(Illuminate\Http\Request $request)
-    // {
-    //     if ($request->isMethod('post')){ 
-    //         return view('pages.paciente');
-    //     }
-
-    //     return response()->json(['response' => 'This is get method']);
-    // }
+    
 }

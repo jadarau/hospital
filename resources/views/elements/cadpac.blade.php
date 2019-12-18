@@ -8,13 +8,23 @@
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+         <script src="{{ asset('http://parsleyjs.org/dist/parsley.js') }}"></script>
 </HEAD>
 
 <body>
 
+<script>
+
+   $(document).ready(function(){
+      $('#cadpac').parsley();
+   });
+
+</script>
+
+
 
 <div id="corpoform">
-    <form method="post" action="paciente/cadastro">
+    <form method="post" id="cadpac" action="paciente/cadastro">
 
         <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
    @csrf
@@ -60,7 +70,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Nome</span>
                </div>
-                  <input type="text" class="form-control" name="nome">
+                  <input type="text" class="form-control" name="nome" required >
             </div>
          
             <div class="input-group mb-3">
@@ -94,7 +104,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Nasc.</span>
                </div>
-                  <input type="text" class="form-control" name="nasc" >
+                  <input type="text" class="form-control" required name="nasc" >
             </div>
          
             <div class="input-group mb-3">
@@ -109,7 +119,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Mãe</span>
                </div>
-                  <input type="text" class="form-control" name="mae">
+                  <input type="text" class="form-control" required name="mae">
             </div> 
             <div class="input-group mb-3">
                <div class="input-group-prepend">
