@@ -1,4 +1,4 @@
-@extends('templates.recepcao')
+@extends('templates.cadastro')
 
 @section('title', 'Cadastro de Paciente')
 

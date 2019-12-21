@@ -1,11 +1,11 @@
-@extends('templates.recepcao')
+@extends('templates.cadastro')
 
 @section('title', 'Pacientes')
 
 @section('sidebar')
     @parent
 
-    @include('menus/menuclass')
+    @include('menus/menupac')
     
 @endsection
 

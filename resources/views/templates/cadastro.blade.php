@@ -116,7 +116,7 @@
       <div id="content">
 
         <!-- Topbar -->
-       @include('elements/cabecalho')
+       @include('elements/paccabecalho')
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->

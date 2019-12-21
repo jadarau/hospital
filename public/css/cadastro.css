@@ -56,7 +56,7 @@
     #peq{
     
     width: 70%;
-    background;
+    background:none;
     float: right;
     
     }
@@ -160,4 +160,9 @@
         
         background: pink;
         height:50px;
+    }
+
+    #cab{
+        width:100%;
+        background: red;
     }

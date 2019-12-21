@@ -61,7 +61,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Nome</span>
                </div>
-                  <input type="text" class="form-control" name="nome">
+                  <input type="text" class="form-control" required name="nome">
             </div>
          
             <div class="input-group mb-3">
@@ -95,7 +95,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Nasc.</span>
                </div>
-                  <input type="text" class="form-control" name="nasc" >
+                  <input type="text" class="form-control" required name="nasc" >
             </div>
          
             <div class="input-group mb-3">
@@ -110,7 +110,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Mãe</span>
                </div>
-                  <input type="text" class="form-control" name="mae">
+                  <input type="text" class="form-control" required name="mae">
             </div> 
             <div class="input-group mb-3">
                <div class="input-group-prepend">

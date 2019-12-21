@@ -9,6 +9,10 @@
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
          <script src="{{ asset('http://parsleyjs.org/dist/parsley.js') }}"></script>
+
+         <style type="text/css">
+
+         </style>
 </HEAD>
 
 <body>
@@ -21,7 +25,13 @@
 
 </script>
 
+<div style="width:100%;height:40px;background:none;padding-left:8%">
 
+<a href=""><div style="width:100px;height:40px;float:left;background:red;text-align:center;line-height:35px;border-right-width:medium;border-right-color:white;border-right-style:solid;border-radius:10px 10px 0px 0px;color:black;font-weight:bold;">Cadastro</div></a>
+
+<a href=""><div style="width:100px;height:40px;float:left;background:yellow;text-align:center;line-height:35px;border-left-width:medium;border-left-color:white;border-left-style:solid;border-radius:10px 10px 0px 0px;color:black;font-weight:bold;">e-SUS</div></a>
+
+</div>
 
 <div id="corpoform">
     <form method="post" id="cadpac" action="paciente/cadastro">
