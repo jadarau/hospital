@@ -10,6 +10,12 @@
          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
          <script src="{{ asset('http://parsleyjs.org/dist/parsley.js') }}"></script>
 
+         <style type="text/css">
+
+            #dois{display:none;}
+            #tres{display:none;}
+
+         </style>
          
 </HEAD>
 
@@ -21,9 +27,25 @@
       $('#cadpac').parsley();
    });
 
+   function sociais(){
+      document.getElementById('um').style.display="none";
+      document.getElementById('tres').style.display="none";
+      document.getElementById('dois').style.display="block";
+   }
+   function cadastro(){
+      document.getElementById('dois').style.display="none";
+      document.getElementById('tres').style.display="none";
+      document.getElementById('um').style.display="block";
+   }
+   function esus(){
+      document.getElementById('um').style.display="none";
+      document.getElementById('dois').style.display="none";
+      document.getElementById('tres').style.display="block";
+   }
+
 </script>
 
-<div style="background:#DCDCDC;">
+<div id="geral" style="background:#DCDCDC;">
 
    @if (session('status'))
       <div class="alert alert-success">
@@ -31,9 +53,11 @@
       </div>
    @endif
 
-@include('elements/abacad')
-
 <form method="post" id="cadpac" action="paciente/cadastro">
+
+<div id="um">
+
+@include('elements/abacad')
 
 <div id="corpoform">
     
@@ -164,9 +188,29 @@
                <button class="btn btn-dark btn-col-auto" id="salvar" onclick="window.location.href = 'buscapac'" name="bt1" type="button">Limpar</button>               
             </div>
          </div>
-      <!--<div>-->
+      <!--<div>-->    
+</div>
 
-    
+</div>
+
+
+<div id="dois">
+@include('elements/abacad2')
+
+<div id="cadsociais">
+Cadsociais
+</div>
+
+</div>
+
+
+<div id="tres">
+@include('elements/abacad3')
+
+<div id="e-sus">
+e-sus
+</div>
+
 </div>
 
 </form>

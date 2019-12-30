@@ -11,6 +11,6 @@
 
 @section('content')
 
-@include('elements.cadpac')
+@include('elements.cadpac2')
     
 @endsection   
