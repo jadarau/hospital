@@ -11,21 +11,24 @@ class GeografiaController extends Controller
 {
     //
 
-    public function greopais(){
+    public function geopais(){
 
         $paises = Paises::all();
 
-        
+        return response()->json([
+            'id' => $paises->ibge,
+            'desc' => $paises->descricao
+        ]);
 
     }
 
-    public function greoestados(){
+    public function geoestados(){
 
        // $paises = Estados::all();
 
     }
 
-    public function greomunicipios(){
+    public function geomunicipios(){
 
         //$paises = Municipios::all();
 
