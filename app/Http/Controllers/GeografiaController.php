@@ -16,7 +16,7 @@ class GeografiaController extends Controller
         $paises = Paises::all();
 
         return response()->json([
-            'id' => $paises->ibge,
+            'cod' => $paises->ibge,
             'desc' => $paises->descricao
         ]);
 

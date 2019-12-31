@@ -23,9 +23,25 @@
 
 <script>
 
-   $(document).ready(function(){
-      $('#cadpac').parsley();
-   });
+$(document).ready(function () {
+        $.ajax({
+            type: "get",
+            url: "/geografiapaises",
+            data: { paises: $("#paises").val() },
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            success: function (obj) {
+                if (obj != null) {
+                    var data = obj.data;
+                    var selectbox = $('#paises');
+                    selectbox.find('option').remove();
+                    $.each(data, function (i, d) {
+                        $('<option>').val(d.cod).text(d.desc).appendTo(selectbox);
+                    });
+                }
+            }
+        });
+    });
 
    function sociais(){
       document.getElementById('um').style.display="none";
@@ -359,7 +375,7 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform2">País nascimento*</span>
                </div>
-                  <select class="form-control">
+                  <select class="form-control" id="paises">
                      <option>Default select</option>
                   </select>
             </div>
