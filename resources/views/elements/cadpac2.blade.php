@@ -284,18 +284,10 @@
 <div id="dois">
 @include('elements/abacad2')
 
-<div id="cadsociais">
-
-
-<div style="background:#DCDCDC;">
-
-<div id="corpoform">
+<div id="corpoform2" style="background:black;">
     
-         <div id="cima">
+         <div id="cima2" style="background:#DCDCDC;">
  
-
-            <input type="hidden"/>
-
             <div class="input-group mb-3">
                <div class="input-group-prepend">
                   <span class="input-group-text"  id="inform2">RG</span>
@@ -346,7 +338,7 @@
       </div>
 
 
-      <div id="campos">
+      <div id="campos2" style="background:#DCDCDC;">
           
        
          <div class="input-group mb-3">
@@ -397,22 +389,7 @@
 
       </div> 
       
-      
-      <!--<div id="botao2">-->
-
-         <div id="alinhabt">
-            <div class="btn-group" id="botao">
-               <button class="btn btn-primary" id="salvar" name="bt1" type="submit" value="Salvar">Salvar</button>
-               <button class="btn btn-dark btn-col-auto" id="salvar" onclick="window.location.href = 'buscapac'" name="bt1" type="button">Limpar</button>               
-            </div>
-         </div>
-      <!--<div>-->
-
-    
-</div>
-
-</div>
-
+         
 
 </div>
 

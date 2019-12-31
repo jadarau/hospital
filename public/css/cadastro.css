@@ -33,13 +33,19 @@
 
     div#corpoform{
     
-     background: none;   
+     background: #DCDCDC;   
      width: 85%;
      margin: 30px auto 0px auto;  
      
-     
-    
     }
+
+    #corpoform2{
+    
+        background: #DCDCDC;   
+        width: 85%;
+        margin: 30px auto 0px auto;  
+        
+       }
 
     #familiacab{
        
@@ -161,6 +167,15 @@
     background: none;
     
     }
+
+    #cima2{
+    
+        float:left;
+        width:45%;
+        height: 400px;
+        background: none;
+        
+        }
     
     
     #foto{
@@ -230,6 +245,14 @@
         width:45%;
         background: none;
         height: 440px;
+    }
+
+    #campos2{
+    
+        float:right;
+        width:45%;
+        background: none;
+        height: 400px;
     }
     
     #botao{
