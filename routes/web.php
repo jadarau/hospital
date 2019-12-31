@@ -37,6 +37,9 @@ Route::get('profissional','MenuController@profissional');
 Route::get('enfermaria','MenuController@enfermaria');
 Route::get('leito','MenuController@leito');
 Route::get('laboratorio','MenuController@laboratorio');
+Route::get('geografiapaises','GeografiaController@greopais');
+Route::get('geografiaestados','GeografiaController@greoestados');
+Route::get('geografiamunicipios','GeografiaController@greomunicipios');
 
 //PACIENTE
 Route::get('novopac', function(){
