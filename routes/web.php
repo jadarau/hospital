@@ -37,7 +37,7 @@ Route::get('profissional','MenuController@profissional');
 Route::get('enfermaria','MenuController@enfermaria');
 Route::get('leito','MenuController@leito');
 Route::get('laboratorio','MenuController@laboratorio');
-Route::get('/geografiapaises','GeografiaController@geopais');
+Route::get('geografiapaises','GeografiaController@geopais');
 Route::get('geografiaestados','GeografiaController@geoestados');
 Route::get('geografiamunicipios','GeografiaController@geomunicipios');
 

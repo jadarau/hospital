@@ -24,10 +24,14 @@
 <script>
 
 $(document).ready(function () {
-        $.ajax({
+     popula();
+});
+
+    function popula(){
+    $.ajax({
             type: "get",
-            url: "/geografiapaises",
-            data: { paises: $("#paises").val() },
+            url: "geografiapaises",
+            data: { paises: paises },
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
             success: function (obj) {
@@ -35,13 +39,13 @@ $(document).ready(function () {
                     var data = obj.data;
                     var selectbox = $('#paises');
                     selectbox.find('option').remove();
-                    $.each(data, function (i, d) {
-                        $('<option>').val(d.cod).text(d.desc).appendTo(selectbox);
+                    $.each(data, function (key, value) {
+                        $('<option>').val(value.cod).text(value.desc).appendTo(selectbox);
                     });
                 }
             }
         });
-    });
+    }
 
    function sociais(){
       document.getElementById('um').style.display="none";
