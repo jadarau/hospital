@@ -13,12 +13,12 @@ class GeografiaController extends Controller
 
     public function geopais(){
 
-        $paises = Paises::all();
+        $paises = Paises::list('descricao','ibge');
 
-        return response()->json([
-            'cod' => $paises->ibge,
-            'desc' => $paises->descricao
-        ]);
+        // return response()->json([
+        //     'cod' => $paises->ibge,
+        //     'desc' => $paises->descricao
+        // ]);
 
     }
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Pessoas;
+use App\Paises;
+use App\Nacionalidades;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -39,7 +41,10 @@ class MenuController extends Controller
 
     public function paciente(Request $request){
         
-            return view('pages/paciente');
+            $paises = Paises::all();
+            $nacions = Nacionalidades::all();
+            // return view('pages/paciente')->with('paises', $paises);
+            return view('pages/paciente')->with(array('nacions' => $nacions,'paises' => $paises));
         
     }
 

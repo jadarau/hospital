@@ -6,6 +6,7 @@
      <link rel="stylesheet" href="css/cadastro.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
          <script src="{{ asset('http://parsleyjs.org/dist/parsley.js') }}"></script>
@@ -23,29 +24,46 @@
 
 <script>
 
-$(document).ready(function () {
-     popula();
-});
+// $(document).ready(function () {
+//    $.ajax({
+//             type: 'get',
+//             url: 'geografiapaises',
+//             data: { cod: cod, desc:desc },
+//             dataType: 'json',
+//             contentType: "application/json; charset=utf-8",
+//             success: function (obj) {
+//                 if (obj != null) {
+//                     var data = obj.data;
+//                     var selectbox = $('#uf2');
+//                     selectbox.find('option').remove();
+//                     $.each(data, function (key, d) {
+//                         $('<option>').val(d.cod).text(d.desc).appendTo(selectbox);
+//                     });
+//                 }
+//             }
+//      });
+//      popula();
+// });
 
-    function popula(){
-    $.ajax({
-            type: "get",
-            url: "geografiapaises",
-            data: { paises: paises },
-            dataType: 'json',
-            contentType: "application/json; charset=utf-8",
-            success: function (obj) {
-                if (obj != null) {
-                    var data = obj.data;
-                    var selectbox = $('#paises');
-                    selectbox.find('option').remove();
-                    $.each(data, function (key, value) {
-                        $('<option>').val(value.cod).text(value.desc).appendTo(selectbox);
-                    });
-                }
-            }
-        });
-    }
+   //  function popula(){
+   //  $.ajax({
+   //          type: 'get',
+   //          url: '/geografiapaises',
+   //          data: { cod: cod, desc:desc },
+   //          dataType: 'json',
+   //          contentType: "application/json; charset=utf-8",
+   //          success: function (obj) {
+   //              if (obj != null) {
+   //                  var data = obj.data;
+   //                  var selectbox = $('#uf2');
+   //                  selectbox.find('option').remove();
+   //                  $.each(data, function (cod, desc) {
+   //                      $('<option>').val(cod).text(desc).appendTo(selectbox);
+   //                  });
+   //              }
+   //          }
+   //      });
+   //  }
 
    function sociais(){
       document.getElementById('um').style.display="none";
@@ -191,12 +209,19 @@ $(document).ready(function () {
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">UF</span>
                </div>
-                  <select class="form-control">
+                  <select class="form-control" id="uf2">
                      <option>Default select</option>
                   </select>
             </div>
 
-            
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Bairro</span>
+               </div>
+                  <select class="form-control">
+                     <option>Default select</option>
+                  </select>
+            </div>
 
       </div>
 
@@ -262,14 +287,7 @@ $(document).ready(function () {
                   </select>
             </div>         
             
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Bairro</span>
-               </div>
-                  <select class="form-control">
-                     <option>Default select</option>
-                  </select>
-            </div>
+            
 
       </div> 
       
@@ -327,7 +345,12 @@ $(document).ready(function () {
                   <span class="input-group-text" id="inform2">Nacionalidade*</span>
                </div>
                   <select class="form-control">
-                     <option>Default select</option>
+                  <option>Selecione</option>
+                     @if($nacions)
+                        @foreach($nacions as $nacion)
+                           <option value="{{$nacion->id}}">{{$nacion->descricao}}</option>                        
+                        @endforeach
+                     @endif
                   </select>
             </div>
 
@@ -380,7 +403,12 @@ $(document).ready(function () {
                   <span class="input-group-text" id="inform2">País nascimento*</span>
                </div>
                   <select class="form-control" id="paises">
-                     <option>Default select</option>
+                  <option>Selecione</option>
+                  @if($paises)
+                     @foreach($paises as $pais)                     
+                     <option value="{{$pais->cod}}">{{$pais->descricao}}</option>
+                     @endforeach
+                  @endif
                   </select>
             </div>
 
