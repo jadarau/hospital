@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Paises;
 use App\Municipios;
-use App\Estados;
+
+use Illuminate\Support\Facades\DB;
 
 class GeografiaController extends Controller
 {
@@ -22,10 +23,22 @@ class GeografiaController extends Controller
 
     }
 
-    public function geoestados(){
+    public function estados(Request $request){
 
-       // $paises = Estados::all();
+        if($request->ajax()){   
+                        
+            $pais = $request->get('paises');            
+            
+            $estados = DB::table('estados')
+                            ->where('codpais',$pais)
+                            ->orderBy('uf', 'asc')
+                            ->get();                          
 
+            // $json = json_enconde($estadoArray);
+            return response()->json($estados);
+
+        }
+        
     }
 
     public function geomunicipios(){

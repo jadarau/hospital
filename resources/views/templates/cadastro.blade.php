@@ -9,7 +9,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
   <script src="{{ asset('js/jquery-ui-1.7.3.custom.min.js') }}" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') }}"></script>
   <script src="{{ asset('https://code.jquery.com/jquery-1.12.4.min.js') }}"></script>
   <script src="{{ asset('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js') }}"></script>
@@ -184,6 +189,7 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
+  @yield('script')
 </body>
 
 </html>

@@ -38,7 +38,8 @@ Route::get('enfermaria','MenuController@enfermaria');
 Route::get('leito','MenuController@leito');
 Route::get('laboratorio','MenuController@laboratorio');
 Route::get('geografiapaises','GeografiaController@geopais');
-Route::get('geografiaestados','GeografiaController@geoestados');
+// Route::get('geografiaestados/{id}','GeografiaController@getEstados');
+Route::post('geografiaestados','GeografiaController@estados')->name('uf');
 Route::get('geografiamunicipios','GeografiaController@geomunicipios');
 
 //PACIENTE

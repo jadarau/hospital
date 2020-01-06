@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pessoas;
 use App\Paises;
+use App\Estados;
 use App\Nacionalidades;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -26,8 +27,6 @@ class MenuController extends Controller
             
             // return view('pages/classificacao');
 
-            
-
             //return view('pessoa.index', compact('pessoa'));
         
         
@@ -43,8 +42,10 @@ class MenuController extends Controller
         
             $paises = Paises::all();
             $nacions = Nacionalidades::all();
+            $estados = Estados::all();
+            
             // return view('pages/paciente')->with('paises', $paises);
-            return view('pages/paciente')->with(array('nacions' => $nacions,'paises' => $paises));
+            return view('pages/paciente')->with(array('nacions' => $nacions,'paises' => $paises,'estados' => $estados));
         
     }
 

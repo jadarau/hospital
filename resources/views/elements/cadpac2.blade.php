@@ -5,6 +5,7 @@
      <title>Cadastro de Pacientes</title>
      <link rel="stylesheet" href="css/cadastro.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')}}"></script>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -12,74 +13,72 @@
          <script src="{{ asset('http://parsleyjs.org/dist/parsley.js') }}"></script>
 
          <style type="text/css">
-
+            
             #dois{display:none;}
             #tres{display:none;}
 
          </style>
-         
+         <meta name="_token" content="{{ csrf_token() }}" />
 </HEAD>
 
 <body>
 
 <script>
+ 
+$(document).ready(function () {
+   $.ajaxSetup({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+         }
+   });
 
-// $(document).ready(function () {
-//    $.ajax({
-//             type: 'get',
-//             url: 'geografiapaises',
-//             data: { cod: cod, desc:desc },
-//             dataType: 'json',
-//             contentType: "application/json; charset=utf-8",
-//             success: function (obj) {
-//                 if (obj != null) {
-//                     var data = obj.data;
-//                     var selectbox = $('#uf2');
-//                     selectbox.find('option').remove();
-//                     $.each(data, function (key, d) {
-//                         $('<option>').val(d.cod).text(d.desc).appendTo(selectbox);
-//                     });
-//                 }
-//             }
-//      });
-//      popula();
-// });
-
-   //  function popula(){
-   //  $.ajax({
-   //          type: 'get',
-   //          url: '/geografiapaises',
-   //          data: { cod: cod, desc:desc },
-   //          dataType: 'json',
-   //          contentType: "application/json; charset=utf-8",
-   //          success: function (obj) {
-   //              if (obj != null) {
-   //                  var data = obj.data;
-   //                  var selectbox = $('#uf2');
-   //                  selectbox.find('option').remove();
-   //                  $.each(data, function (cod, desc) {
-   //                      $('<option>').val(cod).text(desc).appendTo(selectbox);
-   //                  });
-   //              }
-   //          }
-   //      });
-   //  }
-
+   $('#paises').on('change', function(){          
+      var paises =  $(this).val();  
+      var _token = $('input[name="_token"]').val();
+      // var dependent = $(this).data('dependent');
+      $.ajax({     
+            type: "POST",
+            url: "{{ route('uf') }}",
+            data: JSON.stringify({ paises: paises, _token: _token }),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (estados) {                     
+                    var selectbox = $('#ufnasc');
+                    selectbox.find('option').remove();
+                    $('<option>').val('').text('Selecione o Estado').appendTo(selectbox);
+                        $.each(estados, function (i, d) {
+                           $('<option>').val(d.codigo).text(d.uf).appendTo(selectbox);
+                        });                
+            }
+     });   
+   });
+});
+        
    function sociais(){
-      document.getElementById('um').style.display="none";
-      document.getElementById('tres').style.display="none";
-      document.getElementById('dois').style.display="block";
+      $('#um').hide();
+      $('#tres').hide();
+      $('#dois').show();
+      // document.getElementById('um').style.display="none";
+      // document.getElementById('tres').style.display="none";
+      // document.getElementById('dois').style.display="block";
    }
    function cadastro(){
-      document.getElementById('dois').style.display="none";
-      document.getElementById('tres').style.display="none";
-      document.getElementById('um').style.display="block";
+      $('#um').show();
+      $('#tres').hide();
+      $('#dois').hide();
+      // document.getElementById('dois').style.display="none";
+      // document.getElementById('tres').style.display="none";
+      // document.getElementById('um').style.display="block";
    }
    function esus(){
-      document.getElementById('um').style.display="none";
-      document.getElementById('dois').style.display="none";
-      document.getElementById('tres').style.display="block";
+      $('#um').hide();
+      $('#tres').show();
+      $('#dois').hide();
+      // document.getElementById('um').style.display="none";
+      // document.getElementById('dois').style.display="none";
+      // document.getElementById('tres').style.display="block";
    }
+
 
 </script>
 
@@ -100,7 +99,7 @@
 <div id="corpoform">
     
         <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
-   @csrf   
+   
 
       <div id="familiacab">
 
@@ -209,18 +208,23 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">UF</span>
                </div>
-                  <select class="form-control" id="uf2">
-                     <option>Default select</option>
+                  <select class="form-control" name="uf" id="uf" data-dependent="cidade">
+                     <option value="">Estado onde mora</option>
+                  @if($estados)
+                     @foreach($estados as $estado)                     
+                     <option value="{{$estado->codigo}}">{{$estado->uf}}</option>
+                     @endforeach
+                  @endif
                   </select>
             </div>
 
             <div class="input-group mb-3">
                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Bairro</span>
+                  <span class="input-group-text" id="bairro">Bairro</span>
                </div>
-                  <select class="form-control">
-                     <option>Default select</option>
-                  </select>
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
             </div>
 
       </div>
@@ -283,7 +287,7 @@
                   <span class="input-group-text" id="inform">Cidade</span>
                </div>
                   <select class="form-control">
-                     <option>Default select</option>
+                     <option>Cidade de residência</option>
                   </select>
             </div>         
             
@@ -344,13 +348,12 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform2">Nacionalidade*</span>
                </div>
-                  <select class="form-control">
-                  <option>Selecione</option>
-                     @if($nacions)
-                        @foreach($nacions as $nacion)
-                           <option value="{{$nacion->id}}">{{$nacion->descricao}}</option>                        
-                        @endforeach
-                     @endif
+               <select class="form-control" name="nacion" id="nacio">
+                  @if($nacions)
+                     @foreach($nacions as $nacion)                     
+                     <option value="{{$nacion->id}}">{{$nacion->descricao}}</option>
+                     @endforeach
+                  @endif
                   </select>
             </div>
 
@@ -366,8 +369,13 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform2">UF de Nascimento*</span>
                </div>
-                  <select class="form-control">
-                     <option>Default select</option>
+                  <select class="form-control" id="ufnasc">
+                     <option>Selecione o Estado</option>
+                     @if($estados)
+                        @foreach($estados as $estado)                     
+                           <option value="{{$estado->codigo}}">{{$estado->uf}}</option>
+                        @endforeach
+                     @endif
                   </select>
             </div>
 
@@ -402,11 +410,11 @@
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform2">País nascimento*</span>
                </div>
-                  <select class="form-control" id="paises">
-                  <option>Selecione</option>
+               <select class="form-control" name="paises" id="paises" data-dependent="ufnasc">
+               <option value=""></option>
                   @if($paises)
                      @foreach($paises as $pais)                     
-                     <option value="{{$pais->cod}}">{{$pais->descricao}}</option>
+                     <option value="{{$pais->cod}}" <?php if($pais->cod == "76"){echo "selected";} ?>>{{$pais->descricao}}</option>
                      @endforeach
                   @endif
                   </select>
@@ -456,7 +464,7 @@ e-sus
 </form>
 
 </div>
-   
+
 </body>
 
 </HTML>
