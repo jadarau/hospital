@@ -39,14 +39,7 @@
      
     }
 
-    #corpoform2{
-    
-        background: #DCDCDC;   
-        width: 85%;
-        margin: 30px auto 0px auto;  
         
-       }
-
     #familiacab{
        
         width:100%;
@@ -172,8 +165,8 @@
     
         float:left;
         width:45%;
-        height: 400px;
-        background: none;
+        height: 350px;
+        background: blue;
         
         }
     
@@ -251,8 +244,8 @@
     
         float:right;
         width:45%;
-        background: none;
-        height: 400px;
+        background: pink;
+        height: 350px;
     }
     
     #botao{

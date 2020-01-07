@@ -2,8 +2,7 @@
 
 <HEAD>
      <meta charset="utf-8"/>
-     <title>Cadastro de Pacientes</title>
-     <link rel="stylesheet" href="css/cadastro.css">
+     <title>Cadastro de Pacientes</title>     
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')}}"></script>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -60,7 +59,11 @@ $(document).ready(function () {
       $('#dois').show();
       // document.getElementById('um').style.display="none";
       // document.getElementById('tres').style.display="none";
-      // document.getElementById('dois').style.display="block";
+      document.getElementById('dois').style.background="#DCDCDC";
+      document.getElementById('dois').style.height="460px";
+      document.getElementById('cima2').style.height="340px";
+      document.getElementById('campos2').style.height="340px";      
+      // document.getElementById('campos2').style.background="blue";
    }
    function cadastro(){
       $('#um').show();
@@ -295,20 +298,7 @@ $(document).ready(function () {
 
       </div> 
       
-      <div id="unidaderef">
-
-         <select required class="form-control">
-            <option selected disabled>Selecione a Unidade de Referência do Paciente*</option>
-            <option>UNIDADE 1</option>
-            <option>UNIDADE 2</option>
-            <option>UNIDADE 3</option>
-            <option>UNIDADE 4</option>
-            <option>UNIDADE 5</option>
-         </select>
-
-      </div>
-
-
+      
       <!--<div id="botao2">-->
 
          <div id="alinhabt">
@@ -323,129 +313,141 @@ $(document).ready(function () {
 </div>
 
 
+
 <div id="dois">
 @include('elements/abacad2')
 
-<div id="corpoform2" style="background:black;">
-    
-         <div id="cima2" style="background:#DCDCDC;">
- 
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text"  id="inform2">RG</span>
-               </div>
-                  <input type="text" class="form-control" name="rg" >
-            </div>
-
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">CNH</span>
-               </div>
-                  <input type="text" class="form-control" name="cnh">
-            </div>
-
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">Nacionalidade*</span>
-               </div>
-               <select class="form-control" name="nacion" id="nacio">
-                  @if($nacions)
-                     @foreach($nacions as $nacion)                     
-                     <option value="{{$nacion->id}}">{{$nacion->descricao}}</option>
-                     @endforeach
-                  @endif
-                  </select>
-            </div>
-
-
-         <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">Data naturalização*</span>
-               </div>
-                  <input type="text" class="form-control" name="natura" required >
-            </div>
-         
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">UF de Nascimento*</span>
-               </div>
-                  <select class="form-control" id="ufnasc">
-                     <option>Selecione o Estado</option>
-                     @if($estados)
-                        @foreach($estados as $estado)                     
-                           <option value="{{$estado->codigo}}">{{$estado->uf}}</option>
-                        @endforeach
-                     @endif
-                  </select>
-            </div>
-
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">Data de Entrada</span>
-               </div>
-                  <input type="text" class="form-control" name="cidade">
-            </div>
-
-      </div>
-
-
-      <div id="campos2" style="background:#DCDCDC;">
-          
+<div id="corpoform">   
        
-         <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">NIS (PIS/PASEP)</span>
-               </div>
-                  <input type="text" class="form-control" name="nis">
-         </div>
+   <div id="cima2">
+ 
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text"  id="inform2">RG</span>
+    </div>
+       <input type="text" class="form-control" name="rg" >
+ </div>
 
-         <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">Passaport</span>
-               </div>
-                  <input type="text" class="form-control" required name="passaport" >
-            </div>
-         
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">País nascimento*</span>
-               </div>
-               <select class="form-control" name="paises" id="paises" data-dependent="ufnasc">
-               <option value=""></option>
-                  @if($paises)
-                     @foreach($paises as $pais)                     
-                     <option value="{{$pais->cod}}" <?php if($pais->cod == "76"){echo "selected";} ?>>{{$pais->descricao}}</option>
-                     @endforeach
-                  @endif
-                  </select>
-            </div>
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">CNH</span>
+    </div>
+       <input type="text" class="form-control" name="cnh">
+ </div>
 
-         
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">Portaria Natural.*</span>
-               </div>
-                  <input type="text" class="form-control" required name="mae">
-            </div> 
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">Munic. Nascimento*</span>
-               </div>
-                  <select class="form-control">
-                     <option>Default select</option>
-                  </select>
-            </div>
-            
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform2">Bairro</span>
-               </div>
-                  <input type="text" class="form-control" name="bairro">
-            </div>                       
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">Nacionalidade*</span>
+    </div>
+    <select class="form-control" name="nacion" id="nacio">
+       @if($nacions)
+          @foreach($nacions as $nacion)                     
+          <option value="{{$nacion->id}}">{{$nacion->descricao}}</option>
+          @endforeach
+       @endif
+       </select>
+ </div>
 
-      </div> 
+
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">Data naturalização*</span>
+    </div>
+       <input type="text" class="form-control" name="natura" required >
+ </div>
+
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">UF de Nascimento*</span>
+    </div>
+       <select class="form-control" id="ufnasc">
+          <option>Selecione o Estado</option>
+          @if($estados)
+             @foreach($estados as $estado)                     
+                <option value="{{$estado->codigo}}">{{$estado->uf}}</option>
+             @endforeach
+          @endif
+       </select>
+ </div>
+
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">Data de Entrada</span>
+    </div>
+       <input type="text" class="form-control" name="cidade">
+ </div>
+
+</div>
+
+
+<div id="campos2">          
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">NIS (PIS/PASEP)</span>
+    </div>
+       <input type="text" class="form-control" name="nis">
+</div>
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">Passaport</span>
+    </div>
+       <input type="text" class="form-control" required name="passaport" >
+</div>
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">País nascimento*</span>
+    </div>
+    <select class="form-control" name="paises" id="paises" data-dependent="ufnasc">
+    <option value=""></option>
+       @if($paises)
+          @foreach($paises as $pais)                     
+          <option value="{{$pais->cod}}" <?php if($pais->cod == "76"){echo "selected";} ?>>{{$pais->descricao}}</option>
+          @endforeach
+       @endif
+       </select>
+ </div>
+
+
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">Portaria Natural.*</span>
+    </div>
+       <input type="text" class="form-control" required name="mae">
+ </div> 
+
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">Munic. Nascimento*</span>
+    </div>
+       <select class="form-control">
+          <option>Default select</option>
+       </select>
+ </div>
+ 
+ <div class="input-group mb-3">
+    <div class="input-group-prepend">
+       <span class="input-group-text" id="inform2">Bairro</span>
+    </div>
+       <input type="text" class="form-control" name="bairro">
+ </div>                       
+
+</div>   
       
-         
+     
+
+         <select required class="form-control">
+            <option selected disabled>Selecione a Unidade de Referência do Paciente*</option>
+            <option>UNIDADE 1</option>
+            <option>UNIDADE 2</option>
+            <option>UNIDADE 3</option>
+            <option>UNIDADE 4</option>
+            <option>UNIDADE 5</option>
+         </select>
+
+      
 
 </div>
 
@@ -455,9 +457,9 @@ $(document).ready(function () {
 <div id="tres">
 @include('elements/abacad3')
 
-<div id="e-sus">
-e-sus
-</div>
+   <div id="e-sus">
+      e-sus
+   </div>
 
 </div>
 
