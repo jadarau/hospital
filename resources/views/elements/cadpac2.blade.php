@@ -80,6 +80,7 @@ $(document).ready(function () {
       // document.getElementById('um').style.display="none";
       // document.getElementById('dois').style.display="none";
       // document.getElementById('tres').style.display="block";
+      document.getElementById('tres').style.height="460px";
    }
 
 
@@ -99,10 +100,8 @@ $(document).ready(function () {
 
 @include('elements/abacad')
 
-<div id="corpoform">
-    
-        <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
-   
+<div id="corpoform">    
+        <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->   
 
       <div id="familiacab">
 
@@ -202,6 +201,63 @@ $(document).ready(function () {
          
             <div class="input-group mb-3">
                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Nº</span>
+               </div>
+                  <input type="text" class="form-control" name="cep">
+            </div>
+
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="city">Cidade</span>
+               </div>
+                  <select class="form-control">
+                     <option>Cidade de residência</option>
+                  </select>
+            </div>   
+
+      </div>
+
+
+      <div id="campos">          
+       
+         <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Sexo*</span>
+               </div>
+                        
+                  <div style="background:none;width:78%;" class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                     <label class="form-check-label" for="inlineRadio1">Masculino</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Feminino</label>
+                  </div>               
+         </div>
+
+         <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Social</span>
+               </div>
+                  <input type="text" class="form-control" placeholder="Nome social" required name="social">
+            </div> 
+         
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Nasc.*</span>
+               </div>
+                  <input type="text" class="form-control" name="nasc">
+            </div>
+
+         
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Mãe*</span>
+               </div>
+                  <input type="text" class="form-control" required name="mae">
+            </div>  
+
+            <div class="input-group mb-3">
+               <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Endere.</span>
                </div>
                   <input type="text" class="form-control" name="ende">
@@ -228,86 +284,17 @@ $(document).ready(function () {
                   <select class="form-control" id="bairro" >
                      <option></option>
                   </select>                  
-            </div>
+            </div>            
 
-      </div>
-
-
-      <div id="campos">          
-       
-         <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Sexo*</span>
-               </div>
-                        
-                  <div style="background:none;width:78%;" class="form-check form-check-inline">
-                     <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
-                     <label class="form-check-label" for="inlineRadio1">Masculino</label>
-
-                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
-                     <label class="form-check-label" for="inlineRadio2">Feminino</label>
-                  </div>               
-         </div>
-
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Email</span>
-               </div>
-                  <input type="text" class="form-control" required name="email" >
-            </div>
-         
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Nasc.*</span>
-               </div>
-                  <input type="text" class="form-control" name="nasc">
-            </div>
-
-         
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Social</span>
-               </div>
-                  <input type="text" class="form-control" placeholder="Nome social" required name="social">
-            </div> 
-
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Mãe*</span>
-               </div>
-                  <input type="text" class="form-control" required name="mae">
-            </div> 
-
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Nº CEP</span>
-               </div>
-                  <input type="text" class="form-control" name="cep">
-            </div>
+      </div>       
             
-            <div class="input-group mb-3">
-               <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Cidade</span>
-               </div>
-                  <select class="form-control">
-                     <option>Cidade de residência</option>
-                  </select>
-            </div>         
-            
-            
-
-      </div> 
-      
-      
-      <!--<div id="botao2">-->
-
-         <div id="alinhabt">
+         <!-- <div id="alinhabt"> -->
             <div class="btn-group" id="botao">
                <button class="btn btn-primary" id="salvar" name="bt1" type="submit" value="Salvar">Salvar</button>
                <button class="btn btn-dark btn-col-auto" id="salvar" onclick="window.location.href = 'buscapac'" name="bt1" type="button">Limpar</button>               
             </div>
-         </div>
-      <!--<div>-->    
+         <!-- </div> -->
+      
 </div>
 
 </div>
@@ -317,7 +304,7 @@ $(document).ready(function () {
 <div id="dois">
 @include('elements/abacad2')
 
-<div id="corpoform">   
+<div id="corpoform2">   
        
    <div id="cima2">
  
@@ -428,11 +415,11 @@ $(document).ready(function () {
  </div>
  
  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-       <span class="input-group-text" id="inform2">Bairro</span>
-    </div>
-       <input type="text" class="form-control" name="bairro">
- </div>                       
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Email</span>
+               </div>
+                  <input type="text" class="form-control" required name="email" >
+ </div>                  
 
 </div>   
       
