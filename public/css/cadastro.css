@@ -59,40 +59,45 @@
     #q1{
         width:28%;
         float:left;
+        margin-left:0.5%;
         background: #E6E6FA;
         height: 70px;
         border:solid 1px;
         border-radius:10px;
+        margin-top:0.4%;
     }
 
     #q2{
         width:20%;
         float:left;
-        margin-left:2%;
+        margin-left:1.6%;
         background: #E6E6FA;
         height: 70px;
         border:solid 1px;
         border-radius:10px;
+        margin-top:0.4%;
     }
 
     #q3{
         width:28%;
         float:left;
-        margin-left:2%;
+        margin-left:1.6%;
         background: #E6E6FA;
         height: 70px;
         border:solid 1px;
         border-radius:10px;
+        margin-top:0.4%;
     }
 
     #q4{
         width:18%;
         float:left;
-        margin-left:2%;
+        margin-left:1.6%;
         height: 70px;
         background: #E6E6FA;
         border:solid 1px;
         border-radius:10px;
+        margin-top:0.4%;
     }
 
     #fc1{
@@ -163,18 +168,22 @@
     #cima{
     
     float:left;
-    width:45%;
-    height: 400px;
+    width:46%;
+    height: 380px;
     background: none;
+    border:solid 1px;
+    border-radius: 10px;
     
     }
 
     #cima2{
     
         float:left;
-        width:45%;
-        height: 350px;
+        width:46%;
+        height: 320px;
         background: none;
+        border:solid 1px;
+        border-radius: 10px;
         
         }
     
@@ -186,7 +195,7 @@
     height: 130px;
     background: grey;
     float: left;
-    margin-top: 0;
+    margin-top: 10px;
     
     }
     
@@ -197,6 +206,8 @@
     width: 70%;
     background:none;
     float: right;
+    margin-top:2px;
+    margin-right: 2px;
     
     }
     
@@ -243,17 +254,21 @@
     #campos{
     
         float:right;
-        width:45%;
+        width:46%;
         background: none;
-        height: 400px;
+        height: 380px;
+        border:solid 1px;
+        border-radius: 10px;
     }
 
     #campos2{
     
         float:right;
-        width:45%;
+        width:46%;
         background: none;
-        height: 350px;
+        height: 320px;
+        border:solid 1px;
+        border-radius: 10px;
     }
     
     #botao{
@@ -318,4 +333,12 @@
     #cab{
         width:100%;
         background: red;
+    }
+
+    #parentesco{
+        height:425px;
+        width:98%;
+        border:solid 1px;
+        border-radius:10px;   
+        background: none;
     }

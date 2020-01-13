@@ -80,7 +80,7 @@ $(document).ready(function () {
       // document.getElementById('um').style.display="none";
       // document.getElementById('dois').style.display="none";
       // document.getElementById('tres').style.display="block";
-      document.getElementById('tres').style.height="460px";
+      document.getElementById('tres').style.height="500px";
    }
 
 
@@ -100,8 +100,7 @@ $(document).ready(function () {
 
 @include('elements/abacad')
 
-<div id="corpoform">
-    
+<div id="corpoform">    
         <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->   
 
       <div id="familiacab">
@@ -289,12 +288,12 @@ $(document).ready(function () {
 
       </div>       
             
-         <div id="alinhabt">
+         <!-- <div id="alinhabt"> -->
             <div class="btn-group" id="botao">
                <button class="btn btn-primary" id="salvar" name="bt1" type="submit" value="Salvar">Salvar</button>
                <button class="btn btn-dark btn-col-auto" id="salvar" onclick="window.location.href = 'buscapac'" name="bt1" type="button">Limpar</button>               
             </div>
-         </div>
+         <!-- </div> -->
       
 </div>
 
@@ -305,7 +304,7 @@ $(document).ready(function () {
 <div id="dois">
 @include('elements/abacad2')
 
-<div id="corpoform">   
+<div id="corpoform2">   
        
    <div id="cima2">
  
@@ -422,10 +421,9 @@ $(document).ready(function () {
                   <input type="text" class="form-control" required name="email" >
  </div>                  
 
-</div>   
-      
+</div>        
      
-
+         <!-- Select unidade de referência do paciente -->
          <select required class="form-control">
             <option selected disabled>Selecione a Unidade de Referência do Paciente*</option>
             <option>UNIDADE 1</option>
@@ -446,7 +444,192 @@ $(document).ready(function () {
 @include('elements/abacad3')
 
    <div id="e-sus">
-      e-sus
+
+      <label style="margin-left:5px">Relação de Parentesco com o Responsável Familiar</label>
+      <div id="parentesco">
+
+         <div id="parentcheck" style="width:65%;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:7px;margin-top:5px">
+            <div style="background:none;width:97%;" class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                     <label class="form-check-label" for="inlineRadio1">Cônjugue/Companheiro</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Filho(a)</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Enteado(a)</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Neto(a)/Bisneto(a)</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Sogro(a)</label>
+            </div>         
+
+            <div style="background:none;width:98%;" class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                     <label class="form-check-label" for="inlineRadio1">Pai/Mãe</label>                     
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Irmão/Irmã</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Genro/Nora</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                     <label class="form-check-label" for="inlineRadio1">Outro parente</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                     <label class="form-check-label" for="inlineRadio1">Não parente</label>
+            </div>
+         </div>
+
+         <div id="ocupacao" style="width:33%;height:90px;float:left;background:none;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:5px">
+
+             <div class="input-group mb-3" style="margin-top:7%">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Ocupação</span>
+               </div>
+                  <input type="text" class="form-control" name="ocupa" >
+             </div> 
+
+         </div>
+
+         <div class="input-group mb-3" style="width:98.7%;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:9%;">
+               <div class="input-group-prepend" style="float:left">
+                  <label style="margin-top:5px;margin-left:5px">FREQUENTA ESCOLA OU CRECHE?</label>
+               </div>
+                        
+               <div style="background:none;width:20%;float:left" class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                     <label class="form-check-label" for="inlineRadio1">Sim</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Não</label>
+               </div>               
+         </div>
+
+         <div id="curso" style="width:65%;height:140px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:7px;margin-top:-9px">
+            <div style="background:none;width:45%;float:left" class="form-check form-check-row">
+
+            <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                     <label class="form-check-label" for="inlineRadio1">Pai/Mãe</label>                     
+                  </div>
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Irmão/Irmã</label>
+                  </div>
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Genro/Nora</label>
+                  </div>
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                     <label class="form-check-label" for="inlineRadio1">Outro parente</label>
+                  </div>
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                     <label class="form-check-label" for="inlineRadio1">Não parente</label>
+                  </div>
+
+
+            </div>         
+
+            <div style="background:none;width:45%;float:right" class="form-check form-check-row">
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                     <label class="form-check-label" for="inlineRadio1">Pai/Mãe</label>                     
+                  </div>
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Irmão/Irmã</label>
+                  </div>
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Genro/Nora</label>
+                  </div>
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                     <label class="form-check-label" for="inlineRadio1">Outro parente</label>
+                  </div>
+
+                  <div class="form-check form-check-row">
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                     <label class="form-check-label" for="inlineRadio1">Não parente</label>
+                  </div>
+
+            </div>
+         </div>
+
+         <div id="trabalho" style="width:33%;height:260px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:-9px">
+
+            <div style="background:none;width:45%;float:left" class="form-check form-check-row">
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                  <label class="form-check-label" for="inlineRadio1">Pai/Mãe</label>                     
+               </div>   
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Irmão/Irmã</label>
+               </div>
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Genro/Nora</label>
+               </div>
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                  <label class="form-check-label" for="inlineRadio1">Outro parente</label>
+               </div>
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                  <label class="form-check-label" for="inlineRadio1">Não parente</label>
+               </div>
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                  <label class="form-check-label" for="inlineRadio1">Pai/Mãe</label>                     
+               </div>
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Irmão/Irmã</label>
+               </div>
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Genro/Nora</label>
+               </div>
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                  <label class="form-check-label" for="inlineRadio1">Outro parente</label>
+               </div>
+
+               <div class="form-check form-check-row">
+                  <input class="form-check-input" type="radio" name="feminino" id="inlineRadio1" value="option2">
+                  <label class="form-check-label" for="inlineRadio1">Não parente</label>
+               </div>
+
+            </div>
+
+         </div>
+
+      </div>
+
    </div>
 
 </div>

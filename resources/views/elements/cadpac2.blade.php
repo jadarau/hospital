@@ -60,9 +60,9 @@ $(document).ready(function () {
       // document.getElementById('um').style.display="none";
       // document.getElementById('tres').style.display="none";
       document.getElementById('dois').style.background="#DCDCDC";
-      document.getElementById('dois').style.height="460px";
-      document.getElementById('cima2').style.height="340px";
-      document.getElementById('campos2').style.height="340px";      
+      document.getElementById('dois').style.height="475px";
+      // document.getElementById('cima2').style.height="340px";
+      // document.getElementById('campos2').style.height="340px";      
       // document.getElementById('campos2').style.background="blue";
    }
    function cadastro(){
@@ -80,7 +80,7 @@ $(document).ready(function () {
       // document.getElementById('um').style.display="none";
       // document.getElementById('dois').style.display="none";
       // document.getElementById('tres').style.display="block";
-      document.getElementById('tres').style.height="460px";
+      document.getElementById('tres').style.height="500px";
    }
 
 
@@ -103,7 +103,7 @@ $(document).ready(function () {
 <div id="corpoform">    
         <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->   
 
-      <div id="familiacab">
+      <div id="familiacab" style="border:solid 1px;border-radius:10px;height:80px">
 
          <div id="q1">
          <div id="fc1">CNS do Cidadão</div>
@@ -174,39 +174,37 @@ $(document).ready(function () {
                   <input type="text" class="form-control" name="celular">
             </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" >
                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Etnia*</span>
+                  <span class="input-group-text" id="inform">Nasc.*</span>
                </div>
-                  <select class="form-control">
-                     <option>Default select</option>
-                  </select>
-            </div>
+                  <input type="text" class="form-control" name="nasc">
+            </div>            
 
          </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Nome*</span>
                </div>
                   <input type="text" class="form-control" name="nome" required >
             </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Pai*</span>
                </div>
                   <input type="text" class="form-control" name="pai" required >
             </div> 
          
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Nº</span>
                </div>
                   <input type="text" class="form-control" name="cep">
             </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="city">Cidade</span>
                </div>
@@ -220,7 +218,7 @@ $(document).ready(function () {
 
       <div id="campos">          
        
-         <div class="input-group mb-3">
+         <div class="input-group mb-3" style="margin-left:2px;width:99%;margin-top:2px">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Sexo*</span>
                </div>
@@ -234,36 +232,38 @@ $(document).ready(function () {
                   </div>               
          </div>
 
-         <div class="input-group mb-3">
+         <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Social</span>
                </div>
                   <input type="text" class="form-control" placeholder="Nome social" required name="social">
             </div> 
          
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Nasc.*</span>
+                  <span class="input-group-text" id="inform">Etnia*</span>
                </div>
-                  <input type="text" class="form-control" name="nasc">
+                  <select class="form-control">
+                     <option>Default select</option>
+                  </select>
             </div>
 
          
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Mãe*</span>
                </div>
                   <input type="text" class="form-control" required name="mae">
             </div>  
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">Endere.</span>
                </div>
                   <input type="text" class="form-control" name="ende">
             </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">UF</span>
                </div>
@@ -277,7 +277,7 @@ $(document).ready(function () {
                   </select>
             </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro">Bairro</span>
                </div>
@@ -308,21 +308,21 @@ $(document).ready(function () {
        
    <div id="cima2">
  
- <div class="input-group mb-3">
+ <div class="input-group mb-3" style="margin-left:2px;width:99%;margin-top:2px">
     <div class="input-group-prepend">
        <span class="input-group-text"  id="inform2">RG</span>
     </div>
        <input type="text" class="form-control" name="rg" >
  </div>
 
- <div class="input-group mb-3">
+ <div class="input-group mb-3" style="margin-left:2px;width:99%">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">CNH</span>
     </div>
        <input type="text" class="form-control" name="cnh">
  </div>
 
- <div class="input-group mb-3">
+ <div class="input-group mb-3" style="margin-left:2px;width:99%">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">Nacionalidade*</span>
     </div>
@@ -336,14 +336,14 @@ $(document).ready(function () {
  </div>
 
 
- <div class="input-group mb-3">
+ <div class="input-group mb-3" style="margin-left:2px;width:99%">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">Data naturalização*</span>
     </div>
        <input type="text" class="form-control" name="natura" required >
  </div>
 
- <div class="input-group mb-3">
+ <div class="input-group mb-3" style="margin-left:2px;width:99%">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">UF de Nascimento*</span>
     </div>
@@ -357,7 +357,7 @@ $(document).ready(function () {
        </select>
  </div>
 
- <div class="input-group mb-3">
+ <div class="input-group mb-3" style="margin-left:2px;width:99%">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">Data de Entrada</span>
     </div>
@@ -369,21 +369,21 @@ $(document).ready(function () {
 
 <div id="campos2">          
 
-<div class="input-group mb-3">
+<div class="input-group mb-3" style="margin-left:2px;width:99%;margin-top:2px">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">NIS (PIS/PASEP)</span>
     </div>
        <input type="text" class="form-control" name="nis">
 </div>
 
-<div class="input-group mb-3">
+<div class="input-group mb-3" style="margin-left:2px;width:99%">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">Passaport</span>
     </div>
        <input type="text" class="form-control" required name="passaport" >
 </div>
 
-<div class="input-group mb-3">
+<div class="input-group mb-3" style="margin-left:2px;width:99%">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">País nascimento*</span>
     </div>
@@ -398,34 +398,36 @@ $(document).ready(function () {
  </div>
 
 
- <div class="input-group mb-3">
+ <div class="input-group mb-3" style="margin-left:2px;width:99%">
     <div class="input-group-prepend">
        <span class="input-group-text" id="inform2">Portaria Natural.*</span>
     </div>
        <input type="text" class="form-control" required name="mae">
  </div> 
 
- <div class="input-group mb-3">
-    <div class="input-group-prepend">
-       <span class="input-group-text" id="inform2">Munic. Nascimento*</span>
-    </div>
-       <select class="form-control">
-          <option>Default select</option>
-       </select>
- </div>
- 
- <div class="input-group mb-3">
+            <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inform">Email</span>
+                  <span class="input-group-text" id="inform2">Munic. Nascimento*</span>
+               </div>
+               <select class="form-control">
+                  <option>Default select</option>
+               </select>
+            </div>
+ 
+            <div class="input-group mb-3" style="margin-left:2px;width:99%"style="margin-left:2px;width:99%">
+               <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform2">@Email</span>
                </div>
                   <input type="text" class="form-control" required name="email" >
- </div>                  
+            </div>                  
 
-</div>   
-      
-     
+      </div>       
 
-         <select required class="form-control">
+      <div class="input-group mb-3" style="height:0.5%;width:100%;"></div>
+
+      <div class="input-group mb-3" style="border:solid 1px;height:50px;border-radius:10px;background:none;margin-top:10px;">
+         <!-- Select unidade de referência do paciente -->
+         <select class="form-control" style="margin-top:0.5%;margin-left:2px">
             <option selected disabled>Selecione a Unidade de Referência do Paciente*</option>
             <option>UNIDADE 1</option>
             <option>UNIDADE 2</option>
@@ -433,8 +435,7 @@ $(document).ready(function () {
             <option>UNIDADE 4</option>
             <option>UNIDADE 5</option>
          </select>
-
-      
+      </div>
 
 </div>
 
@@ -445,7 +446,115 @@ $(document).ready(function () {
 @include('elements/abacad3')
 
    <div id="e-sus">
-      e-sus
+
+      
+      <div id="parentesco">
+
+         <div id="parentcheck" style="width:65%;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:7px;margin-top:5px">
+            
+            <label style="margin-left:5px">Relação de Parentesco com o Responsável Familiar</label>
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro"></span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
+         </div>
+
+         <div id="ocupacao" style="width:33%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:5px">
+
+            <label style="margin-left:5px">Ocupação</label>
+             <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="inform">Ocupação</span>
+               </div> -->
+                  <input type="text" class="form-control" name="ocupa" >
+             </div> 
+
+         </div>
+
+         <div class="input-group mb-3" style="width:98.7%;height:50px;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:9%;">
+                 
+               <div class="input-group mb-3" style="width:40%;float:left;margin-left:0.5%;margin-top:0.5%">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text" id="bairro">FREQUENTA ESCOLA OU CRECHE?</span>
+                  </div>
+                  <select class="form-control" id="bairro" >
+                     <option value="1">Sim</option>
+                     <option value="0">Não</option>
+                  </select>                  
+               </div> 
+
+               <div class="input-group mb-3" style="width:59%;float:right;margin-top:0.5%">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text" id="bairro">Crianças de 0 a 9 anos, com quem fica?</span>
+                  </div>
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+               </div> 
+
+
+         </div>
+
+         <div id="curso" style="width:65%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:7px;margin-top:-9px">
+         
+            <label style="margin-left:5px">Curso mais elevaddo que frequenta ou frequentou?</label>            
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro"></span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
+         </div>
+
+         <div id="trabalho" style="width:33%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:-9px">
+
+            <label style="margin-left:5px">Situação no mercado de trabalho</label>                        
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro">Bairro</span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
+         </div>
+
+         <div class="input-group mb-3" style="width:98.7%;height:50px;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:9.5%;">
+
+            <div style="width:55%;height:40px;float:left;background:none">
+               <div class="input-group-prepend" style="float:left;margin-top:4px">
+                  <label style="margin-top:5px;margin-left:5px">É membro de povo ou comunidade tradicional?</label>
+               </div>
+                        
+               <div style="background:none;width:35%;float:left;margin-top:4px" class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" name="masculino" id="inlineRadio1" value="option1">
+                     <label class="form-check-label" for="inlineRadio1">Sim</label>
+
+                     <input class="form-check-input" type="radio" name="feminino" id="inlineRadio2" value="option2">
+                     <label class="form-check-label" for="inlineRadio2">Não</label>
+               </div> 
+            </div>   
+
+             <div class="input-group mb-3" style="background:none;width:44%;float:left;margin-top:4px">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text">Qual?</span>
+                  </div>
+                     <input type="text" class="form-control" name="cidade">
+              </div>                                 
+              
+         </div>
+
+      </div>
+
    </div>
 
 </div>
