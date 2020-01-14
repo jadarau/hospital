@@ -60,7 +60,7 @@ $(document).ready(function () {
       // document.getElementById('um').style.display="none";
       // document.getElementById('tres').style.display="none";
       document.getElementById('dois').style.background="#DCDCDC";
-      document.getElementById('dois').style.height="475px";
+      document.getElementById('dois').style.height="460px";
       // document.getElementById('cima2').style.height="340px";
       // document.getElementById('campos2').style.height="340px";      
       // document.getElementById('campos2').style.background="blue";
@@ -80,7 +80,7 @@ $(document).ready(function () {
       // document.getElementById('um').style.display="none";
       // document.getElementById('dois').style.display="none";
       // document.getElementById('tres').style.display="block";
-      document.getElementById('tres').style.height="500px";
+      document.getElementById('tres').style.height="570px";
    }
 
 
@@ -206,7 +206,7 @@ $(document).ready(function () {
 
             <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
-                  <span class="input-group-text" id="city">Cidade</span>
+                  <span class="input-group-text" id="city" style="width:80px">Cidade</span>
                </div>
                   <select class="form-control">
                      <option>Cidade de residência</option>
@@ -279,7 +279,7 @@ $(document).ready(function () {
 
             <div class="input-group mb-3" style="margin-left:2px;width:99%">
                <div class="input-group-prepend">
-                  <span class="input-group-text" id="bairro">Bairro</span>
+                  <span class="input-group-text" id="inform">Bairro</span>
                </div>
                   <select class="form-control" id="bairro" >
                      <option></option>
@@ -287,13 +287,15 @@ $(document).ready(function () {
             </div>            
 
       </div>       
+
+      <div class="input-group mb-3" style="height:0.5%;width:100%;"></div>
             
-         <!-- <div id="alinhabt"> -->
+         <div id="alinhabt" class="input-group mb-3">
             <div class="btn-group" id="botao">
                <button class="btn btn-primary" id="salvar" name="bt1" type="submit" value="Salvar">Salvar</button>
                <button class="btn btn-dark btn-col-auto" id="salvar" onclick="window.location.href = 'buscapac'" name="bt1" type="button">Limpar</button>               
             </div>
-         <!-- </div> -->
+         </div>
       
 </div>
 
@@ -425,7 +427,7 @@ $(document).ready(function () {
 
       <div class="input-group mb-3" style="height:0.5%;width:100%;"></div>
 
-      <div class="input-group mb-3" style="border:solid 1px;height:50px;border-radius:10px;background:none;margin-top:10px;">
+      <div class="input-group mb-3" style="border:solid 1px;height:50px;border-radius:10px;background:#E6E6FA;margin-top:10px;">
          <!-- Select unidade de referência do paciente -->
          <select class="form-control" style="margin-top:0.5%;margin-left:2px">
             <option selected disabled>Selecione a Unidade de Referência do Paciente*</option>
@@ -450,7 +452,7 @@ $(document).ready(function () {
       
       <div id="parentesco">
 
-         <div id="parentcheck" style="width:65%;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:7px;margin-top:5px">
+         <div id="parentcheck" style="width:65%;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:7px;margin-top:0.7%">
             
             <label style="margin-left:5px">Relação de Parentesco com o Responsável Familiar</label>
             <div class="input-group mb-3">
@@ -551,6 +553,92 @@ $(document).ready(function () {
                      <input type="text" class="form-control" name="cidade">
               </div>                                 
               
+         </div>
+
+         <!-- primeiro quadrante de 3 -->
+         <div id="curso" style="width:32.5%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:7px;margin-top:-9px">
+         
+            <label style="margin-left:5px">Curso mais elevaddo que ?</label>            
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro"></span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
+         </div>
+
+         <div id="trabalho" style="width:32.5%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:-9px">
+
+            <label style="margin-left:5px">Situação no mercado de trabalho</label>                        
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro">Bairro</span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
+         </div>
+
+         <div id="trabalho" style="width:32.5%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:-9px">
+
+            <label style="margin-left:5px">Situação no mercado de trabalho</label>                        
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro">Bairro</span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
+         </div>
+
+         <!-- segundo quadrante de 3 -->
+         <div id="curso" style="width:32.5%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:7px;margin-top:0.7%">
+         
+            <label style="margin-left:5px">Curso mais elevaddo que ?</label>            
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro"></span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
+         </div>
+
+         <div id="trabalho" style="width:32.5%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:0.7%">
+
+            <label style="margin-left:5px">Situação no mercado de trabalho</label>                        
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro">Bairro</span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
+         </div>
+
+         <div id="trabalho" style="width:32.5%;height:90px;float:left;background:#E6E6FA;border:solid 1px;border-radius:10px;margin-left:5px;margin-top:0.7%">
+
+            <label style="margin-left:5px">Situação no mercado de trabalho</label>                        
+            <div class="input-group mb-3">
+               <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="bairro">Bairro</span>
+               </div> -->
+                  <select class="form-control" id="bairro" >
+                     <option></option>
+                  </select>                  
+            </div>     
+
          </div>
 
       </div>
