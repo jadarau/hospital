@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pessoas;
+use App\Pacientes;
 use App\Paises;
 use App\Estados;
 use App\Nacionalidades;
@@ -21,7 +22,7 @@ class MenuController extends Controller
 
     public function classificacao(){
 
-            // $results = App\Pessoas::all();
+            // $results = Pacientes::all();
 
             // return $results->toArray();
             
@@ -51,9 +52,10 @@ class MenuController extends Controller
 
     public function recepcao(){
       
-        $pessoas = Pessoas::all();
-        // return view('pages.classificacao');
-        return view('pages.recepcao')->with('pacientes', $pessoas);
+        // $pessoas = Pessoas::all();
+        // return view('pages.recepcao')->with('pacientes', $pessoas);
+        $pacientes = Pacientes::all();
+        return view('pages.recepcao')->with('pacientes', $pacientes);
         
         
     }
