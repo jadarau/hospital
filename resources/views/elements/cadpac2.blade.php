@@ -101,7 +101,10 @@ $(document).ready(function () {
 @include('elements/abacad')
 
 <div id="corpoform">    
-        <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->   
+        <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}">    -->
+        @csrf
+
+      <input type="hidden" name="raca" value="01">
 
       <div id="familiacab" style="border:solid 1px;border-radius:10px;height:80px">
 
@@ -235,7 +238,7 @@ $(document).ready(function () {
                   <span class="input-group-text" id="inform">Etnia*</span>
                </div>
                   <select class="form-control" name="etnia">
-                     <option>Default select</option>
+                     <option value="00">Default select</option>
                   </select>
             </div>
 
@@ -262,7 +265,7 @@ $(document).ready(function () {
                <div class="input-group-prepend">
                   <span class="input-group-text" id="inform">UF</span>
                </div>
-                  <select class="form-control" name="uf" id="uf" data-dependent="cidade">
+                  <select class="form-control" name="uf" id="uf" data-dependent="city">
                      <option value="">Estado onde mora</option>
                   @if($estados)
                      @foreach($estados as $estado)                     
@@ -276,8 +279,8 @@ $(document).ready(function () {
                <div class="input-group-prepend">
                   <span class="input-group-text" id="city" style="width:80px">Cidade</span>
                </div>
-                  <select class="form-control">
-                     <option>Cidade de residência</option>
+                  <select class="form-control" name="city">
+                     <option value="">Cidade de residência</option>
                   </select>
             </div>   
 
@@ -286,7 +289,7 @@ $(document).ready(function () {
                   <span class="input-group-text" id="inform">Bairro</span>
                </div>
                   <select class="form-control" id="bairro" >
-                     <option></option>
+                     <option value="">Selecione</option>
                   </select>                  
             </div>            
 
@@ -416,7 +419,7 @@ $(document).ready(function () {
                   <span class="input-group-text" id="inform2">Munic. Nascimento*</span>
                </div>
                <select class="form-control" name="muninasc">
-                  <option>Default select</option>
+                  <option value="">Default select</option>
                </select>
             </div>
  
@@ -464,7 +467,7 @@ $(document).ready(function () {
                   <span class="input-group-text" id="bairro"></span>
                </div> -->
                   <select class="form-control" id="bairro" name="parentesco">
-                     <option></option>
+                     <option value="">Selecione</option>
                   </select>                  
             </div>     
 
@@ -498,8 +501,8 @@ $(document).ready(function () {
                   <div class="input-group-prepend">
                      <span class="input-group-text" id="bairro">Crianças de 0 a 9 anos, com quem fica?</span>
                   </div>
-                  <select class="form-control" id="bairro" name="criancas">
-                     <option></option>
+                  <select class="form-control" id="criancas" name="criancas">
+                     <option value="">Selecione</option>
                   </select>                  
                </div> 
 
@@ -513,8 +516,8 @@ $(document).ready(function () {
                <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro"></span>
                </div> -->
-                  <select class="form-control" id="bairro" name="curso">
-                     <option></option>
+                  <select class="form-control" id="curso" name="curso">
+                     <option value="">Selecione</option>
                   </select>                  
             </div>     
 
@@ -527,8 +530,8 @@ $(document).ready(function () {
                <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro">Bairro</span>
                </div> -->
-                  <select class="form-control" id="bairro" name="mercadotrab">
-                     <option></option>
+                  <select class="form-control" id="mercadotrab" name="mercadotrab">
+                     <option value="">selecione</option>
                   </select>                  
             </div>     
 
@@ -542,10 +545,10 @@ $(document).ready(function () {
                </div>
                         
                <div style="background:none;width:35%;float:left;margin-top:4px" class="form-check form-check-inline">
-                     <input class="form-check-input" type="radio" name="trad" id="inlineRadio1" value="option1">
+                     <input class="form-check-input" type="radio" name="trad" id="inlineRadio1" value="1">
                      <label class="form-check-label" for="inlineRadio1">Sim</label>
 
-                     <input class="form-check-input" type="radio" name="trad" id="inlineRadio2" value="option2">
+                     <input class="form-check-input" type="radio" name="trad" id="inlineRadio2" value="2">
                      <label class="form-check-label" for="inlineRadio2">Não</label>
                </div> 
             </div>   
@@ -567,8 +570,8 @@ $(document).ready(function () {
                <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro"></span>
                </div> -->
-                  <select class="form-control" id="bairro" name="cuidador">
-                     <option>Não</option>
+                  <select class="form-control" id="cuidador" name="cuidador">
+                  <option value="0">Não</option>
                   </select>                  
             </div>     
 
@@ -581,8 +584,8 @@ $(document).ready(function () {
                <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro">Bairro</span>
                </div> -->
-                  <select class="form-control" id="bairro" name="grupocomunity">
-                     <option>Não</option>
+                  <select class="form-control" id="grupocomunity" name="grupocomunity">
+                  <option value="">Não</option>
                   </select>                  
             </div>     
 
@@ -595,8 +598,8 @@ $(document).ready(function () {
                <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro">Bairro</span>
                </div> -->
-                  <select class="form-control" id="bairro" name="planoprivado">
-                     <option>Não</option>
+                  <select class="form-control" id="planoprivado" name="planoprivado">
+                     <option value="">Não</option>
                   </select>                  
             </div>     
 
@@ -610,8 +613,8 @@ $(document).ready(function () {
                <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro"></span>
                </div> -->
-                  <select class="form-control" id="bairro" name="orientacao">
-                     <option>Não</option>
+                  <select class="form-control" id="orientacao" name="orientacao">
+                     <option value="">Não</option>
                   </select>                  
             </div>     
 
@@ -624,8 +627,8 @@ $(document).ready(function () {
                <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro">Bairro</span>
                </div> -->
-                  <select class="form-control" id="bairro" name="genero">
-                     <option>Não</option>
+                  <select class="form-control" id="genero" name="genero">
+                     <option value="">Não</option>
                   </select>                  
             </div>     
 
@@ -638,8 +641,8 @@ $(document).ready(function () {
                <!-- <div class="input-group-prepend">
                   <span class="input-group-text" id="bairro">Bairro</span>
                </div> -->
-                  <select class="form-control" id="bairro" name="deficiencia">
-                     <option>Não</option>
+                  <select class="form-control" id="deficiencia" name="deficiencia">
+                     <option value="">Não</option>
                   </select>                  
             </div>     
 

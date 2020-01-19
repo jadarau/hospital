@@ -50,7 +50,7 @@ function janela(url){
         @foreach($pacientes as $paciente)
         <input type="hidden" name="cod"/>
         <tr>
-            <td>{{$paciente->sus}}</td>
+            <td>{{$paciente->cns}}</td>
             <td>{{$paciente->nasc}}</td>
             <td>{{$paciente->nome}}</td>
             <td>{{$paciente->mae}}</td>
