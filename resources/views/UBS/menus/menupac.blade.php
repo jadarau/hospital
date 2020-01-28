@@ -7,7 +7,7 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="paciente">
+        <a class="nav-link" href="buscapaciente">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Buscar</span></a>
       </li>

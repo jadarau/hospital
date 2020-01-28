@@ -6,10 +6,23 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use App\Pessoas;
 use App\Pacientes;
+use App\Paises;
+use App\Estados;
+use App\Nacionalidades;
 use Illuminate\Support\Facades\Validator;
 
 class PacienteController extends Controller
 {
+
+    // public function paciente(){
+
+    //         $paises = Paises::all();
+    //         $nacions = Nacionalidades::all();
+    //         $estados = Estados::all();
+            
+    //         // return view('pages/paciente')->with('paises', $paises);
+    //         return view('pages/paciente')->with(array('nacions' => $nacions,'paises' => $paises,'estados' => $estados));
+    // }
 
   
     public function cadastro(Request $request){
@@ -24,22 +37,9 @@ class PacienteController extends Controller
             //     'mae'=>'required'
             // ]);
             
-            // $pessoas = new Pessoas();
-            // $pessoas->sus = $request->sus;
-            // $pessoas->cpf = $request->cpf;
-            // $pessoas->nasc = $request->nasc;
-            // $pessoas->nome = $request->nome;
-            // $pessoas->mae = $request->mae;
-            // $pessoas->cep = $request->cep;
-            // $pessoas->ende = $request->ende;
-            // $pessoas->cidade = $request->cidade;
-            // $pessoas->bairro = $request->bairro;
-            // $pessoas->tel = $request->tel;
-            // $pessoas->save();
-
-            //pacientes
+            
             $pacientes = new Pacientes();
-            // $pacientes->id;
+            
             $pacientes->cns=$request->cns;
             $pacientes->respfamily=$request->respfamily;
             $pacientes->cnsresp=$request->cnsresp;
@@ -60,6 +60,14 @@ class PacienteController extends Controller
             $pacientes->portaria=$request->portaria;
             $pacientes->ufnasc=$request->ufnasc;
             $pacientes->muninasc=$request->muninasc;
+            $pacientes->endereco=$request->endereco;
+            $pacientes->numero=$request->numero;
+            $pacientes->cep=$request->cep;
+            $pacientes->uf=$request->uf;
+            $pacientes->city=$request->city;
+            $pacientes->bairro=$request->bairro;
+            $pacientes->passaport=$request->passaport;
+            $pacientes->unidade=$request->unidade;
             $pacientes->dtentrada=$request->dtentrada;
             $pacientes->celular=$request->celular;
             $pacientes->email=$request->email;
@@ -129,6 +137,14 @@ class PacienteController extends Controller
             $pacientes->portaria=$request->portaria;
             $pacientes->ufnasc=$request->ufnasc;
             $pacientes->muninasc=$request->muninasc;
+            $pacientes->endereco=$request->endereco;
+            $pacientes->numero=$request->numero;
+            $pacientes->cep=$request->cep;
+            $pacientes->uf=$request->uf;
+            $pacientes->city=$request->city;
+            $pacientes->bairro=$request->bairro;
+            $pacientes->passaport=$request->passaport;
+            $pacientes->unidade=$request->unidade;
             $pacientes->dtentrada=$request->dtentrada;
             $pacientes->celular=$request->celular;
             $pacientes->email=$request->email;
@@ -155,20 +171,21 @@ class PacienteController extends Controller
 
     public function localizar(){
 
-        return view ('pages/parametro');
+        $pacientes = Pacientes::all();
+        return view ('ubs/pages/localizapac')->with('pacientes', $pacientes);
 
     }
     
     public function editar($id = null){        
 
-        // $pessoas = Pessoas::find($id);
-
-        //     return view('pages.editarpac')->with('pessoas', $pessoas);
-
-
+            $paises = Paises::all();
+            $nacions = Nacionalidades::all();
+            $estados = Estados::all();
+       
             $pacientes = Pacientes::find($id);
 
-            return view('pages.editarpac')->with('pessoas', $pacientes);
+            // return view('pages.editarpacrecep')->with(array('nacions' => $nacions,'paises' => $paises,'estados' => $estados,'pessoas', $pacientes));
+            return view('ubs/pages/pacientes/editarpac')->with(array('nacions' => $nacions,'paises' => $paises,'estados' => $estados,'pacientes' => $pacientes));
 
          
     }

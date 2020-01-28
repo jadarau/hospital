@@ -7,17 +7,14 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h5 class="collapse-header">Módulos do Sistema:</h5>
-            <a class="collapse-item" href="recepcao">Recepção</a>
-            <a class="collapse-item" href="classificacao">Classificação</a>            
-            <a class="collapse-item" href="atendimento">Atendimento</a>
-            <a class="collapse-item" href="internacao">Internação</a>            
-            <a class="collapse-item" href="laboratorio">Laboratório</a>  
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Telas:</h6>
-            <a class="collapse-item" href="paciente">Pacientes</a>
-            <a class="collapse-item" href="profissional">Profissionais</a>
-            <a class="collapse-item" href="enfermaria">Enfermarias</a>
-            <a class="collapse-item" href="leito">Leitos</a>
+            <a class="collapse-item" href="regulacao">Regulação</a>
+            <a class="collapse-item" href="ubs">UBS</a>            
+            <a class="collapse-item" href="hospital">Hospital</a>
+            <a class="collapse-item" href="farmacia">Farmácia</a>            
+            <a class="collapse-item" href="almoxarifado">Almoxarifado</a>  
+            <a class="collapse-item" href="laboratorio">Laboratório</a>                                      
+            <a class="collapse-item" href="tfd">TFD</a>  
+            <a class="collapse-item" href="zoonoses">Zoonoses</a>  
           </div>
         </div>
       </li>

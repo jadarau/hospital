@@ -1,15 +1,15 @@
-@extends('templates.recepcao')
+@extends('ubs.templates.pacubs')
 
 @section('title', 'Alterar')
 
 @section('sidebar')
     
-    @include('menus.menucadpac')
+    @include('ubs.menus.menueditpac')
     
 @endsection
 
 @section('content')
 
-@include('elements.editpac')
+@include('ubs.conteudo.cadpac2')
 
 @endsection

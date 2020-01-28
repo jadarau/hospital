@@ -1,15 +1,16 @@
-@extends('templates.cadastro')
+@extends('ubs.templates.pacubs')
 
 @section('title', 'Cadastro de Paciente')
 
 @section('sidebar')
+    @parent
     
-    @include('menus.menurecep')
+    @include('ubs.menus.menucadpac')
     
 @endsection
 
 @section('content')
 
-@include('elements.novopac')
+@include('ubs.conteudo.cadpac2')
 
 @endsection

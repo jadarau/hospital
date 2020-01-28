@@ -16,8 +16,20 @@ class MenuController extends Controller
     //
     public function home(){
       
-        return view('pages/home');
+        return view('principal/pages/home');
         
+    }
+
+    public function hospital(){
+
+        return view('hospital/pages/home');
+
+    }
+
+    public function ubs(){
+
+        return view('ubs/pages/home');
+
     }
 
     public function classificacao(){
@@ -28,8 +40,7 @@ class MenuController extends Controller
             
             // return view('pages/classificacao');
 
-            //return view('pessoa.index', compact('pessoa'));
-        
+            //return view('pessoa.index', compact('pessoa'));        
         
     }
 
@@ -46,7 +57,7 @@ class MenuController extends Controller
             $estados = Estados::all();
             
             // return view('pages/paciente')->with('paises', $paises);
-            return view('pages/paciente')->with(array('nacions' => $nacions,'paises' => $paises,'estados' => $estados));
+            return view('pages/pacientenovo')->with(array('nacions' => $nacions,'paises' => $paises,'estados' => $estados));
         
     }
 
@@ -55,7 +66,7 @@ class MenuController extends Controller
         // $pessoas = Pessoas::all();
         // return view('pages.recepcao')->with('pacientes', $pessoas);
         $pacientes = Pacientes::all();
-        return view('pages.recepcao')->with('pacientes', $pacientes);
+        return view('ubs.pages.localizapac')->with('pacientes', $pacientes);
         
         
     }

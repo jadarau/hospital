@@ -36,8 +36,8 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="home">
+        <a class="nav-link" href="hospital">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Início</span></a>
+          <span>Voltar</span></a>
       </li>
       

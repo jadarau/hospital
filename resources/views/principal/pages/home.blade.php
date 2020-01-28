@@ -1,11 +1,11 @@
-@extends('templates.master')
+@extends('principal.templates.master')
 
 @section('title', 'Início')
 
 @section('sidebar')
     @parent
 
-    @include('menus/menuprincipal')
+    @include('principal/menus/menuprincipal')
     
 @endsection
 

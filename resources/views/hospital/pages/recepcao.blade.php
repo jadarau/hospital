@@ -1,11 +1,11 @@
-@extends('templates.recepcao')
+@extends('hospital.templates.hospitaltemplate')
 
 @section('title', 'Classificaçao')
 
 @section('sidebar')
     @parent
 
-    @include('menus/menurecep')
+    @include('hospital/menus/menurecep')
     
 @endsection
 
@@ -55,8 +55,8 @@ function janela(url){
             <td>{{$paciente->nome}}</td>
             <td>{{$paciente->mae}}</td>
             <td><label>Unidade Modelo</label></td>            
-            <td><a href="editarpac/{{$paciente->id}}">Atualizar</a></td>
-            <td><a id="encaminhar" onclick="janela('encaminhar');return false" href="">Ecaminhar</a></td>
+            <td><a href="editarpac/{{$paciente->id}}"><button type="button" class="btn btn-primary btn-sm">Atualizar</button></a></td>
+            <td><a id="encaminhar" onclick="janela('encaminhar');return false" href=""><button type="button" class="btn btn-success btn-sm">Encaminhar</button></a></td>
         </tr>
         @endforeach
       @endif      

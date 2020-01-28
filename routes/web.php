@@ -15,11 +15,12 @@
 
 Route::get('/', function () {
     
-    return view('pages.home');
+    return view('principal.pages.home');
 });
 //MENUS
 
-
+Route::get('hospital','MenuController@hospital');
+Route::get('ubs','MenuController@ubs');
 Route::resource('busca','PessoasController');
 Route::get('home','MenuController@home');
 Route::get('classificados', function () {
@@ -27,10 +28,9 @@ Route::get('classificados', function () {
 });
 Route::get('classificacao','ClassificaController@index');
 Route::get('historico','ClassificaController@result');
-
+// Route::get('novopac','MenuController@paciente');
 Route::get('class','MenuController@class');
-Route::get('paciente','MenuController@paciente');
-Route::get('recepcao','MenuController@recepcao');
+Route::get('ubs/recepcao','MenuController@recepcao');
 Route::get('atendimento','MenuController@atendimento');
 Route::get('internacao','MenuController@internacao');
 Route::get('profissional','MenuController@profissional');
@@ -43,13 +43,14 @@ Route::post('geografiaestados','GeografiaController@estados')->name('uf');
 Route::get('geografiamunicipios','GeografiaController@geomunicipios');
 
 //PACIENTE
-Route::get('novopac', function(){
-    return view ('pages.pacientenovo');
-});
-Route::post('paciente/cadastro','PacienteController@cadastro');
+Route::get('ubs/paciente/novo','UbsController@paciente');
+// Route::get('paciente','PacienteController@paciente');
+Route::get('ubs/buscapaciente','PacienteController@localizar');
+Route::post('ubs/paciente/cadastro','PacienteController@cadastro');
 Route::get('buscapac','PacienteController@localizar');
 //Route::get('direciona2','PacienteController@direciona2');
-Route::get('/editarpac/{id}','PacienteController@editar');
+// Route::get('/editarpac/{id}','PacienteController@editar');
+Route::get('ubs/editarpac/{id}','PacienteController@editar');
 
 Route::get('encaminhar', function(){
     return view ('telas.encaminhar');
